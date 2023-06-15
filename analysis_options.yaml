@@ -1,0 +1,31 @@
+include: package:very_good_analysis/analysis_options.yaml
+linter:
+  rules:
+    public_member_api_docs: false
+    one_member_abstracts: false
+    sort_unnamed_constructors_first: false
+    omit_local_variable_types: false
+    always_declare_return_types: true
+    always_specify_types: true
+    prefer_int_literals: false
+    avoid_positional_boolean_parameters: false
+analyzer:
+  plugins:
+    - custom_lint
+  language:
+    strict-inference: true
+    strict-raw-types: true
+  exclude:
+    - lib/getit_instance.config.dart
+    - lib/core/presentation/icons/custom_icons.dart
+    - '**/*.config.dart'
+    - '**/*.g.dart'
+    - '**/*.gr.dart'
+    - '**/*.freezed.dart'
+    - '**/firebase_options*.dart'
+  errors:
+    unused_import: error
+    invalid_annotation_target: ignore
+custom_lint:
+  rules:
+    - missing_provider_scope: false
