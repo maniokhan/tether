@@ -1,25 +1,20 @@
-// ignore_for_file: always_specify_types
-
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:tether_pet_owner/src/features/authentication/pet_info_page.dart';
 
-class SignupScreen extends ConsumerStatefulWidget {
-  const SignupScreen({super.key});
-  static MaterialPageRoute route() {
+class PetInformationScreen extends ConsumerStatefulWidget {
+  const PetInformationScreen({super.key});
+  static Route<PetInformationScreen> route() {
     return MaterialPageRoute(
-      builder: (context) => const SignupScreen(),
+      builder: (BuildContext context) => const PetInformationScreen(),
     );
   }
 
   @override
-  ConsumerState<ConsumerStatefulWidget> createState() => _SigninScreenState();
+  ConsumerState<ConsumerStatefulWidget> createState() =>
+      _PetInformationScreenState();
 }
 
-class _SigninScreenState extends ConsumerState<SignupScreen> {
-  late final TextEditingController _emailController = TextEditingController();
-  late final TextEditingController _passwordController =
-      TextEditingController();
+class _PetInformationScreenState extends ConsumerState<PetInformationScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,10 +27,9 @@ class _SigninScreenState extends ConsumerState<SignupScreen> {
             Image.asset(
               'assets/primary_logo.jpeg',
             ),
-            const SizedBox(height: 16),
             TextField(
               decoration: InputDecoration(
-                hintText: 'Enter Username',
+                hintText: 'Pet Name',
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(12),
                 ),
@@ -43,9 +37,8 @@ class _SigninScreenState extends ConsumerState<SignupScreen> {
             ),
             const SizedBox(height: 16),
             TextField(
-              controller: _emailController,
               decoration: InputDecoration(
-                hintText: 'Enter Email',
+                hintText: 'Pet Age',
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(12),
                 ),
@@ -53,9 +46,17 @@ class _SigninScreenState extends ConsumerState<SignupScreen> {
             ),
             const SizedBox(height: 16),
             TextField(
-              controller: _passwordController,
               decoration: InputDecoration(
-                hintText: 'Enter Password',
+                hintText: 'Breed',
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(12),
+                ),
+              ),
+            ),
+            const SizedBox(height: 16),
+            TextField(
+              decoration: InputDecoration(
+                hintText: 'Medical Condition',
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(12),
                 ),
@@ -71,12 +72,9 @@ class _SigninScreenState extends ConsumerState<SignupScreen> {
                 fixedSize: const Size(120, 50),
                 foregroundColor: Colors.white,
               ),
-              onPressed: () {
-                Navigator.push(context, PetInformationScreen.route());
-              },
-              child: const Text('Sign Up'),
+              onPressed: () {},
+              child: const Text("Let's Start"),
             ),
-            const SizedBox(height: 20),
           ],
         ),
       ),
