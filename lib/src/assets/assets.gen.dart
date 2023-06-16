@@ -22,6 +22,8 @@ class Assets {
   static const AssetGenImage doctorPhoto2 = AssetGenImage('assets/doctor2.jpg');
   static const AssetGenImage doctorPhoto3 = AssetGenImage('assets/doctor3.jpg');
   static const AssetGenImage doctorPhoto4 = AssetGenImage('assets/doctor4.jpg');
+  static const AssetGenImage cat1 = AssetGenImage('assets/persian_cat1.jpg');
+  static const AssetGenImage cat2 = AssetGenImage('assets/persian_cat2.jpg');
 
   /// List of all assets
   List<AssetGenImage> get values => [tetherLogo, primaryLogo, profilePhoto];

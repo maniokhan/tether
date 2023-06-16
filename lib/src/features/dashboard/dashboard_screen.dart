@@ -5,6 +5,8 @@ import 'package:tether_pet_owner/src/features/appointments/appointment_screen.da
 import 'package:tether_pet_owner/src/features/chat/chat_screen.dart';
 import 'package:tether_pet_owner/src/features/dashboard/drawer_screen.dart';
 import 'package:tether_pet_owner/src/features/notification/notification_screen.dart';
+import 'package:tether_pet_owner/src/features/pets/pet_screen.dart';
+import 'package:tether_pet_owner/src/features/providers/provider_screen.dart';
 import 'package:tether_pet_owner/src/theme/config_colors.dart';
 import 'package:tether_pet_owner/src/theme/text.dart';
 
@@ -41,6 +43,20 @@ class _DashBoardScreenState extends ConsumerState<DashBoardScreen> {
           ),
           NavigationDestination(
             icon: Icon(
+              CupertinoIcons.paw_solid,
+              color: ConfigColors.secondary,
+            ),
+            label: 'Pets',
+          ),
+          NavigationDestination(
+            icon: Icon(
+              CupertinoIcons.home,
+              color: ConfigColors.secondary,
+            ),
+            label: 'Providers',
+          ),
+          NavigationDestination(
+            icon: Icon(
               CupertinoIcons.calendar_badge_plus,
               color: ConfigColors.secondary,
             ),
@@ -74,8 +90,10 @@ class _DashBoardScreenState extends ConsumerState<DashBoardScreen> {
       ),
       body: <Widget>[
         const HomeView(),
+        const PetScreen(),
+        const ProviderScreen(),
         const AppointmentScreen(),
-         ChatScreen(),
+        ChatScreen(),
       ][currentPageIndex],
     );
   }
