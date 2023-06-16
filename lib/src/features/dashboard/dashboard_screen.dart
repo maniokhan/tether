@@ -75,7 +75,7 @@ class _DashBoardScreenState extends ConsumerState<DashBoardScreen> {
       body: <Widget>[
         const HomeView(),
         const AppointmentScreen(),
-        const ChatScreen(),
+         ChatScreen(),
       ][currentPageIndex],
     );
   }
