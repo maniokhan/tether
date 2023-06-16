@@ -77,5 +77,5 @@ flutter_gen:
 flutter_icons:
   android: 'launcher_icon'
   ios: true
-  image_path: 'assets/primary_logo.jpeg'
+  image_path: 'assets/primary_logo.png'
   min_sdk_android: 21 # android min sdk min:16, default 21

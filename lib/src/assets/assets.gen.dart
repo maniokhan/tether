@@ -12,11 +12,15 @@ import 'package:flutter/widgets.dart';
 class Assets {
   Assets._();
 
+  static const AssetGenImage tetherLogo =
+      AssetGenImage('assets/Tether-logo.png');
   static const AssetGenImage primaryLogo =
-      AssetGenImage('assets/primary_logo.jpeg');
+      AssetGenImage('assets/primary_logo.png');
+  static const AssetGenImage profilePhoto =
+      AssetGenImage('assets/profile_photo.jpeg');
 
   /// List of all assets
-  List<AssetGenImage> get values => [primaryLogo];
+  List<AssetGenImage> get values => [tetherLogo, primaryLogo, profilePhoto];
 }
 
 class AssetGenImage {
