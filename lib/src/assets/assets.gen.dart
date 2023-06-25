@@ -16,10 +16,13 @@ class Assets {
 
   static const AssetGenImage tetherLogo =
       AssetGenImage('assets/Tether-logo.png');
+  static const SvgGenImage correct = SvgGenImage('assets/correct.svg');
   static const AssetGenImage doctor1 = AssetGenImage('assets/doctor1.jpg');
   static const AssetGenImage doctor2 = AssetGenImage('assets/doctor2.jpg');
   static const AssetGenImage doctor3 = AssetGenImage('assets/doctor3.jpg');
   static const AssetGenImage doctor4 = AssetGenImage('assets/doctor4.jpg');
+  static const SvgGenImage emailGreen = SvgGenImage('assets/email_green.svg');
+  static const SvgGenImage lock = SvgGenImage('assets/lock.svg');
   static const AssetGenImage persianCat1 =
       AssetGenImage('assets/persian_cat1.jpg');
   static const AssetGenImage persianCat2 =
@@ -33,10 +36,13 @@ class Assets {
   /// List of all assets
   List<dynamic> get values => [
         tetherLogo,
+        correct,
         doctor1,
         doctor2,
         doctor3,
         doctor4,
+        emailGreen,
+        lock,
         persianCat1,
         persianCat2,
         primaryLogo,
