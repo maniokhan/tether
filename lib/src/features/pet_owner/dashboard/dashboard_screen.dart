@@ -1,12 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:tether_pet_owner/src/features/appointments/appointment_screen.dart';
+import 'package:tether_pet_owner/src/features/pet_owner/appointments/appointment_screen.dart';
 import 'package:tether_pet_owner/src/features/chat/chat_screen.dart';
-import 'package:tether_pet_owner/src/features/dashboard/drawer_screen.dart';
+import 'package:tether_pet_owner/src/features/pet_owner/dashboard/drawer_screen.dart';
 import 'package:tether_pet_owner/src/features/notification/notification_screen.dart';
-import 'package:tether_pet_owner/src/features/pets/pet_screen.dart';
-import 'package:tether_pet_owner/src/features/providers/provider_screen.dart';
+import 'package:tether_pet_owner/src/features/pet_owner/providers_screen.dart';
+import 'package:tether_pet_owner/src/features/pet_owner/pets/pet_screen.dart';
 import 'package:tether_pet_owner/src/theme/config_colors.dart';
 import 'package:tether_pet_owner/src/theme/text.dart';
 
@@ -91,7 +91,7 @@ class _DashBoardScreenState extends ConsumerState<DashBoardScreen> {
       body: <Widget>[
         const HomeView(),
         const PetScreen(),
-        const ProviderScreen(),
+        const ProvidersScreen(),
         const AppointmentScreen(),
         ChatScreen(),
       ][currentPageIndex],

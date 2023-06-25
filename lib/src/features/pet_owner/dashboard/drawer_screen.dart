@@ -24,9 +24,12 @@ class DrawerScreen extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                // Assets.tetherLogo.image(),
+                // Assets.provider.svg(),
                 CircleAvatar(
                   radius: 32,
                   backgroundImage: AssetImage(
+                    // Assets.profilePhoto.path,
                     Assets.profilePhoto.path,
                   ),
                 ),

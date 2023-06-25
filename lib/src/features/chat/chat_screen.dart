@@ -9,14 +9,14 @@ class ChatScreen extends StatelessWidget {
   // const ChatScreen({super.key});
 
   final List img = [
-    Assets.doctorPhoto1.path,
-    Assets.doctorPhoto2.path,
-    Assets.doctorPhoto3.path,
-    Assets.doctorPhoto4.path,
-    Assets.doctorPhoto1.path,
-    Assets.doctorPhoto2.path,
-    Assets.doctorPhoto3.path,
-    Assets.doctorPhoto4.path,
+    Assets.doctor1.path,
+    Assets.doctor2.path,
+    Assets.doctor3.path,
+    Assets.doctor4.path,
+    Assets.doctor1.path,
+    Assets.doctor2.path,
+    Assets.doctor3.path,
+    Assets.doctor4.path,
   ];
 
   @override

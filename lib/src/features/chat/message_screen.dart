@@ -31,7 +31,7 @@ class MessageScreen extends StatelessWidget {
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     image: DecorationImage(
-                      image: AssetImage(Assets.doctorPhoto1.path),
+                      image: AssetImage(Assets.doctor1.path),
                     ),
                   ),
                 ),

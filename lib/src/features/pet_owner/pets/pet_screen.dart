@@ -33,7 +33,7 @@ class PetScreen extends StatelessWidget {
                     topRight: Radius.circular(16),
                   ),
                   child: Image.asset(
-                    Assets.cat1.path,
+                    Assets.persianCat1.path,
                     fit: BoxFit.cover,
                     height: 190,
                     width: double.infinity,
@@ -87,8 +87,10 @@ class PetScreen extends StatelessWidget {
                       SizedBox(height: 12),
                       Row(
                         children: [
-                          Icon(CupertinoIcons.hourglass_bottomhalf_fill,
-                              size: 26),
+                          Icon(
+                            CupertinoIcons.hourglass_bottomhalf_fill,
+                            size: 26,
+                          ),
                           SizedBox(width: 12),
                           AppText.paragraphI14(
                             'Australian Shepherd',
