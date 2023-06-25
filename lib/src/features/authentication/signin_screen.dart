@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tether_pet_owner/src/assets/assets.gen.dart';
+import 'package:tether_pet_owner/src/common_widgets/common_button.dart';
+import 'package:tether_pet_owner/src/common_widgets/common_card.dart';
 import 'package:tether_pet_owner/src/common_widgets/common_password.dart';
 import 'package:tether_pet_owner/src/common_widgets/common_text_field.dart';
 import 'package:tether_pet_owner/src/common_widgets/common_text_field_title.dart';
+import 'package:tether_pet_owner/src/constants/app_sizes.dart';
+import 'package:tether_pet_owner/src/features/authentication/signup_screen.dart';
+import 'package:tether_pet_owner/src/features/pet_owner/dashboard/dashboard_screen.dart';
 import 'package:tether_pet_owner/src/theme/config_colors.dart';
 import 'package:tether_pet_owner/src/theme/text.dart';
 
-class SigninScreen extends ConsumerStatefulWidget {
+class SigninScreen extends StatefulWidget {
   const SigninScreen({super.key});
   static MaterialPageRoute route() {
     return MaterialPageRoute(
@@ -16,10 +20,10 @@ class SigninScreen extends ConsumerStatefulWidget {
   }
 
   @override
-  ConsumerState<ConsumerStatefulWidget> createState() => _SigninScreenState();
+  State<StatefulWidget> createState() => _SigninScreenState();
 }
 
-class _SigninScreenState extends ConsumerState<SigninScreen> {
+class _SigninScreenState extends State<SigninScreen> {
   late final TextEditingController _emailController;
   late final TextEditingController _passwordController;
 
@@ -45,9 +49,10 @@ class _SigninScreenState extends ConsumerState<SigninScreen> {
       body: SingleChildScrollView(
         padding: const EdgeInsets.symmetric(horizontal: 22, vertical: 30),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              height: MediaQuery.of(context).size.height * 0.18,
+              height: MediaQuery.of(context).size.height * 0.15,
               decoration: BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage(
@@ -57,29 +62,76 @@ class _SigninScreenState extends ConsumerState<SigninScreen> {
                 ),
               ),
             ),
+            gapH16,
+            const AppText.titleS24('Welcome Back!'),
+            gapH4,
+            const AppText.paragraphI14('Please log in to continue.'),
+            gapH24,
             CommonTextFieldTitle(
               leading: Assets.emailGreen.svg(color: ConfigColors.primary),
               text: 'Email',
             ),
-            const SizedBox(
-              height: 8,
-            ),
+            gapH8,
             const CommonTextField(
               hintText: 'Add Email Address',
               textInputType: TextInputType.emailAddress,
             ),
-            const SizedBox(
-              height: 30,
-            ),
+            gapH28,
             CommonTextFieldTitle(
-              leading: Assets.lock.svg(),
+              leading: Assets.lock.svg(color: ConfigColors.primary),
               text: 'Password',
             ),
-            const SizedBox(
-              height: 8,
-            ),
-            // TODO (abubakar): here is the erro
+            gapH8,
             const CommonPasswordInput(),
+            const SizedBox(
+              height: 32,
+            ),
+            CommonButton(
+              text: 'Log In',
+              onPress: () => Navigator.push(context, DashBoardScreen.route()),
+            ),
+            gapH20,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const AppText.paragraphI12(
+                  "Don't have an account yet? ",
+                  fontWeight: FontWeight.w500,
+                  // fontSize: 12,
+                  color: ConfigColors.lightText,
+                ),
+                InkWell(
+                  onTap: () => Navigator.push(context, SignupScreen.route()),
+                  child: const AppText.paragraphI12(
+                    'Register here',
+                    fontWeight: FontWeight.w700,
+                    color: ConfigColors.primary,
+                    // decoration: TextDecoration.underline,
+                  ),
+                ),
+              ],
+            ),
+            gapH32,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                CommonCard(
+                  alignment: Alignment.center,
+                  padding: const EdgeInsets.all(14),
+                  customRadius: BorderRadius.circular(14),
+                  showBorder: true,
+                  child: Assets.facebook.svg(),
+                ),
+                gapW16,
+                CommonCard(
+                  alignment: Alignment.center,
+                  customRadius: BorderRadius.circular(14),
+                  padding: const EdgeInsets.all(14),
+                  showBorder: true,
+                  child: Assets.twitter.svg(),
+                ),
+              ],
+            ),
           ],
         ),
       ),

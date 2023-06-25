@@ -1,10 +1,17 @@
 // ignore_for_file: always_specify_types
 
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:tether_pet_owner/src/features/authentication/pet_info_page.dart';
+import 'package:tether_pet_owner/src/assets/assets.gen.dart';
+import 'package:tether_pet_owner/src/common_widgets/common_button.dart';
+import 'package:tether_pet_owner/src/common_widgets/common_password.dart';
+import 'package:tether_pet_owner/src/common_widgets/common_text_field.dart';
+import 'package:tether_pet_owner/src/common_widgets/common_text_field_title.dart';
+import 'package:tether_pet_owner/src/constants/app_sizes.dart';
+import 'package:tether_pet_owner/src/features/authentication/user_role_screen.dart';
+import 'package:tether_pet_owner/src/theme/config_colors.dart';
+import 'package:tether_pet_owner/src/theme/text.dart';
 
-class SignupScreen extends ConsumerStatefulWidget {
+class SignupScreen extends StatefulWidget {
   const SignupScreen({super.key});
   static MaterialPageRoute route() {
     return MaterialPageRoute(
@@ -13,70 +20,120 @@ class SignupScreen extends ConsumerStatefulWidget {
   }
 
   @override
-  ConsumerState<ConsumerStatefulWidget> createState() => _SigninScreenState();
+  State<StatefulWidget> createState() => _SigninScreenState();
 }
 
-class _SigninScreenState extends ConsumerState<SignupScreen> {
+class _SigninScreenState extends State<SignupScreen> {
   late final TextEditingController _emailController = TextEditingController();
   late final TextEditingController _passwordController =
       TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        backgroundColor: ConfigColors.primary,
+        centerTitle: true,
+        title: const AppText.titleS20(
+          'Tether',
+          color: ConfigColors.white,
+        ),
+      ),
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
         padding: const EdgeInsets.symmetric(horizontal: 22, vertical: 30),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const SizedBox(height: 20),
-            Image.asset(
-              'assets/primary_logo.jpeg',
-            ),
-            const SizedBox(height: 16),
-            TextField(
-              decoration: InputDecoration(
-                hintText: 'Enter Username',
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(12),
+            Container(
+              height: MediaQuery.of(context).size.height * 0.1,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage(
+                    Assets.tetherLogo.path,
+                  ),
+                  fit: BoxFit.cover,
                 ),
               ),
             ),
-            const SizedBox(height: 16),
-            TextField(
-              controller: _emailController,
-              decoration: InputDecoration(
-                hintText: 'Enter Email',
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(12),
-                ),
-              ),
+            gapH16,
+            const AppText.titleS24('Register'),
+            gapH4,
+            const AppText.paragraphI14('Please register to continue.'),
+            gapH24,
+            CommonTextFieldTitle(
+              leading: Assets.prefix.svg(color: ConfigColors.primary),
+              text: 'Prefix',
             ),
-            const SizedBox(height: 16),
-            TextField(
-              controller: _passwordController,
-              decoration: InputDecoration(
-                hintText: 'Enter Password',
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(12),
-                ),
-              ),
+            gapH8,
+            const CommonTextField(
+              hintText: 'Add Prefix',
+              textInputType: TextInputType.emailAddress,
             ),
-            const SizedBox(height: 16),
-            TextButton(
-              style: TextButton.styleFrom(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                backgroundColor: Colors.blueAccent,
-                fixedSize: const Size(120, 50),
-                foregroundColor: Colors.white,
-              ),
-              onPressed: () {
-                Navigator.push(context, PetInformationScreen.route());
-              },
-              child: const Text('Sign Up'),
+            gapH24,
+            CommonTextFieldTitle(
+              leading: Assets.name.svg(color: ConfigColors.primary),
+              text: 'Name',
             ),
-            const SizedBox(height: 20),
+            gapH8,
+            const CommonTextField(
+              hintText: 'Add Full Name (First,Last)',
+              textInputType: TextInputType.emailAddress,
+            ),
+            gapH24,
+            CommonTextFieldTitle(
+              leading: Assets.phoneNumber.svg(color: ConfigColors.primary),
+              text: 'Phone Number',
+            ),
+            gapH8,
+            const CommonTextField(
+              hintText: 'Add Phone Number',
+              textInputType: TextInputType.emailAddress,
+            ),
+            gapH24,
+            CommonTextFieldTitle(
+              leading: Assets.emailGreen.svg(color: ConfigColors.primary),
+              text: 'Email',
+            ),
+            gapH8,
+            const CommonTextField(
+              hintText: 'Add Email Address',
+              textInputType: TextInputType.emailAddress,
+            ),
+            gapH24,
+            CommonTextFieldTitle(
+              leading: Assets.lock.svg(color: ConfigColors.primary),
+              text: 'Password',
+            ),
+            gapH8,
+            const CommonPasswordInput(),
+            gapH24,
+            CommonTextFieldTitle(
+              leading: Assets.lock.svg(color: ConfigColors.primary),
+              text: 'Confirm Password',
+            ),
+            gapH8,
+            const CommonPasswordInput(),
+            gapH18,
+            Row(
+              children: [
+                Checkbox(
+                  value: true,
+                  onChanged: (value) {},
+                  activeColor: ConfigColors.primary,
+                ),
+                const AppText.paragraphI14(
+                  'I agree with the terms and conditions',
+                  fontWeight: FontWeight.w500,
+                  color: ConfigColors.slateGray,
+                ),
+              ],
+            ),
+            gapH24,
+            CommonButton(
+              text: 'Register',
+              onPress: () => Navigator.push(context, UserRoleScreen.route()),
+            ),
           ],
         ),
       ),

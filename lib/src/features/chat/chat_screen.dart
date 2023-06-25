@@ -5,6 +5,11 @@ import 'package:tether_pet_owner/src/theme/text.dart';
 
 class ChatScreen extends StatelessWidget {
   ChatScreen({super.key});
+  static MaterialPageRoute<ChatScreen> route() {
+    return MaterialPageRoute<ChatScreen>(
+      builder: (BuildContext context) => ChatScreen(),
+    );
+  }
 
   // const ChatScreen({super.key});
 

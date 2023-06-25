@@ -16,38 +16,65 @@ class Assets {
 
   static const AssetGenImage tetherLogo =
       AssetGenImage('assets/Tether-logo.png');
+  static const SvgGenImage appointment = SvgGenImage('assets/appointment.svg');
+  static const SvgGenImage checkup = SvgGenImage('assets/checkup.svg');
+  static const SvgGenImage clock = SvgGenImage('assets/clock.svg');
   static const SvgGenImage correct = SvgGenImage('assets/correct.svg');
+  static const SvgGenImage dateTime = SvgGenImage('assets/dateTime.svg');
   static const AssetGenImage doctor1 = AssetGenImage('assets/doctor1.jpg');
   static const AssetGenImage doctor2 = AssetGenImage('assets/doctor2.jpg');
   static const AssetGenImage doctor3 = AssetGenImage('assets/doctor3.jpg');
   static const AssetGenImage doctor4 = AssetGenImage('assets/doctor4.jpg');
   static const SvgGenImage emailGreen = SvgGenImage('assets/email_green.svg');
+  static const SvgGenImage facebook = SvgGenImage('assets/facebook.svg');
+  static const SvgGenImage home = SvgGenImage('assets/home.svg');
   static const SvgGenImage lock = SvgGenImage('assets/lock.svg');
+  static const SvgGenImage message = SvgGenImage('assets/message.svg');
+  static const SvgGenImage name = SvgGenImage('assets/name.svg');
+  static const SvgGenImage notofication =
+      SvgGenImage('assets/notofication.svg');
   static const AssetGenImage persianCat1 =
       AssetGenImage('assets/persian_cat1.jpg');
   static const AssetGenImage persianCat2 =
       AssetGenImage('assets/persian_cat2.jpg');
+  static const SvgGenImage petOwner = SvgGenImage('assets/petOwner.svg');
+  static const SvgGenImage phoneNumber = SvgGenImage('assets/phoneNumber.svg');
+  static const SvgGenImage prefix = SvgGenImage('assets/prefix.svg');
   static const AssetGenImage primaryLogo =
       AssetGenImage('assets/primary_logo.png');
   static const AssetGenImage profilePhoto =
       AssetGenImage('assets/profile_photo.jpeg');
   static const SvgGenImage provider = SvgGenImage('assets/provider.svg');
+  static const SvgGenImage twitter = SvgGenImage('assets/twitter.svg');
 
   /// List of all assets
   List<dynamic> get values => [
         tetherLogo,
+        appointment,
+        checkup,
+        clock,
         correct,
+        dateTime,
         doctor1,
         doctor2,
         doctor3,
         doctor4,
         emailGreen,
+        facebook,
+        home,
         lock,
+        message,
+        name,
+        notofication,
         persianCat1,
         persianCat2,
+        petOwner,
+        phoneNumber,
+        prefix,
         primaryLogo,
         profilePhoto,
-        provider
+        provider,
+        twitter
       ];
 }
 
