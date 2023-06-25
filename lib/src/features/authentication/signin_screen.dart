@@ -20,9 +20,16 @@ class SigninScreen extends ConsumerStatefulWidget {
 }
 
 class _SigninScreenState extends ConsumerState<SigninScreen> {
-  late final TextEditingController _emailController = TextEditingController();
-  late final TextEditingController _passwordController =
-      TextEditingController();
+  late final TextEditingController _emailController;
+  late final TextEditingController _passwordController;
+
+  @override
+  void initState() {
+    _emailController = TextEditingController();
+    _passwordController = TextEditingController();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -65,12 +72,13 @@ class _SigninScreenState extends ConsumerState<SigninScreen> {
               height: 30,
             ),
             CommonTextFieldTitle(
-              leading: Assets.lock.svg(color: ConfigColors.primary),
+              leading: Assets.lock.svg(),
               text: 'Password',
             ),
             const SizedBox(
               height: 8,
             ),
+            // TODO (abubakar): here is the erro
             const CommonPasswordInput(),
           ],
         ),

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:tether_pet_owner/src/common_widgets/check_password.dart';
 import 'package:tether_pet_owner/src/common_widgets/common_error_card.dart';
 import 'package:tether_pet_owner/src/common_widgets/common_text_field.dart';
-import 'package:tether_pet_owner/src/l10n/l10n.dart';
 import 'package:tether_pet_owner/src/utilities/extensions.dart';
 import 'package:tether_pet_owner/src/utilities/requirement.dart';
 
@@ -38,13 +37,13 @@ class _CommonPasswordInputState extends State<CommonPasswordInput> {
 
   @override
   Widget build(BuildContext context) {
-    final AppLocalizations l10n = context.l10n;
+    // final AppLocalizations l10n = context.l10n;
 
     return Column(
       children: <Widget>[
         CommonTextField(
           focusNode: widget.focusNode,
-          hintText: l10n.password.capitalize,
+          hintText: 'Enter Password',
           suffixIcon: _suffixIcon,
           obscureText: _obscureText,
           onChanged: (String newPassword) {
@@ -73,7 +72,7 @@ class _CommonPasswordInputState extends State<CommonPasswordInput> {
         if (widget.confirmPassword) ...<Widget>[
           const SizedBox(height: 16),
           CommonTextField(
-            hintText: l10n.confirmPassword,
+            hintText: 'Enter Confirm Password',
             suffixIcon: _suffixConfirmIcon,
             obscureText: _obscureConfirmText,
             onSuffixIconPressed: () {
@@ -102,8 +101,8 @@ class _CommonPasswordInputState extends State<CommonPasswordInput> {
           ),
           if (!_samePassword) ...<Widget>[
             const SizedBox(height: 16),
-            SynappErrorCard(
-              text: l10n.theSecondPasswordIsDifferent,
+            const SynappErrorCard(
+              text: 'Second Password is Different',
               emoji: '⚠️',
             ),
           ],
