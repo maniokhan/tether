@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tether_pet_owner/src/assets/assets.gen.dart';
 import 'package:tether_pet_owner/src/common_widgets/common_password.dart';
 import 'package:tether_pet_owner/src/common_widgets/common_text_field.dart';
@@ -7,20 +6,16 @@ import 'package:tether_pet_owner/src/common_widgets/common_text_field_title.dart
 import 'package:tether_pet_owner/src/theme/config_colors.dart';
 import 'package:tether_pet_owner/src/theme/text.dart';
 
-class SigninScreen extends ConsumerStatefulWidget {
+class SigninScreen extends StatefulWidget {
   const SigninScreen({super.key});
-  static MaterialPageRoute route() {
-    return MaterialPageRoute(
-      builder: (BuildContext context) => const SigninScreen(),
-    );
-  }
 
   @override
-  ConsumerState<ConsumerStatefulWidget> createState() => _SigninScreenState();
+  State<SigninScreen> createState() => _SigninScreenState();
 }
 
-class _SigninScreenState extends ConsumerState<SigninScreen> {
+class _SigninScreenState extends State<SigninScreen> {
   late final TextEditingController _emailController;
+
   late final TextEditingController _passwordController;
 
   @override
