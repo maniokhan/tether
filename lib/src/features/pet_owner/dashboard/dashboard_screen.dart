@@ -4,6 +4,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:tether_pet_owner/src/assets/assets.gen.dart';
 import 'package:tether_pet_owner/src/common_widgets/common_card.dart';
 import 'package:tether_pet_owner/src/common_widgets/common_tile.dart';
+import 'package:tether_pet_owner/src/common_widgets/provider_tile.dart';
 import 'package:tether_pet_owner/src/constants/app_sizes.dart';
 import 'package:tether_pet_owner/src/features/chat/chat_screen.dart';
 import 'package:tether_pet_owner/src/features/notification/notification_screen.dart';
@@ -258,23 +259,26 @@ class HomeView extends StatelessWidget {
           ],
         ),
         gapH20,
-        CommonCard(
-          height: 80,
-          child: Row(
-            children: [
-              Container(
-                height: 60,
-                width: 60,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15),
-                  image: DecorationImage(
-                    image: AssetImage(Assets.doctor1.path),
-                    fit: BoxFit.fill,
-                  ),
-                ),
-              ),
-            ],
-          ),
+        ProviderTile(
+          providerImage: Assets.doctor1.path,
+          providerName: 'Dr. Maria J.K',
+          providerStatus: 'Veterinarian',
+          rating: 5.0,
+          noOfReviews: 62,
+        ),
+        ProviderTile(
+          providerImage: Assets.doctor2.path,
+          providerName: 'Dr.  Roberto Williams',
+          providerStatus: 'Veterinarian',
+          rating: 4.0,
+          noOfReviews: 45,
+        ),
+        ProviderTile(
+          providerImage: Assets.doctor3.path,
+          providerName: 'Dr. Peter Long',
+          providerStatus: 'Gynecologist',
+          rating: 4.5,
+          noOfReviews: 82,
         ),
       ],
     );
