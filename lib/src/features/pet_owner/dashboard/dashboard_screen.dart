@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:tether_pet_owner/src/assets/assets.gen.dart';
 import 'package:tether_pet_owner/src/common_widgets/common_appointment_tile.dart';
 import 'package:tether_pet_owner/src/common_widgets/common_tile.dart';
@@ -15,7 +14,7 @@ import 'package:tether_pet_owner/src/features/pet_owner/providers_screen.dart';
 import 'package:tether_pet_owner/src/theme/config_colors.dart';
 import 'package:tether_pet_owner/src/theme/text.dart';
 
-class DashBoardScreen extends ConsumerStatefulWidget {
+class DashBoardScreen extends StatefulWidget {
   const DashBoardScreen({super.key});
   static MaterialPageRoute route() {
     return MaterialPageRoute(
@@ -24,11 +23,10 @@ class DashBoardScreen extends ConsumerStatefulWidget {
   }
 
   @override
-  ConsumerState<ConsumerStatefulWidget> createState() =>
-      _DashBoardScreenState();
+  State<StatefulWidget> createState() => _DashBoardScreenState();
 }
 
-class _DashBoardScreenState extends ConsumerState<DashBoardScreen> {
+class _DashBoardScreenState extends State<DashBoardScreen> {
   int currentPageIndex = 0;
   @override
   Widget build(BuildContext context) {
@@ -224,7 +222,7 @@ class HomeView extends StatelessWidget {
           ),
           ProviderTile(
             providerImage: Assets.doctor2.path,
-            providerName: 'Dr.  Roberto Williams',
+            providerName: 'Dr. Roberto Williams',
             providerStatus: 'Veterinarian',
             rating: 4.0,
             noOfReviews: 45,

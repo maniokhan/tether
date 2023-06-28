@@ -66,13 +66,15 @@ class CommonTextField extends StatefulWidget {
     this.onFieldSubmitted,
     this.focusNode,
     this.autofillHint,
+    this.showBorder = false,
+    this.perfix,
   });
 
   final String? Function(String?)? validator;
   final String? hintText;
   final String? errorMessage;
   final IconData? suffixIcon;
-  final IconData? prefixIcon;
+  final Widget? prefixIcon;
   final Text? prefixText;
   final void Function()? onSuffixIconPressed;
   final bool isOptionField;
@@ -92,7 +94,8 @@ class CommonTextField extends StatefulWidget {
   final bool autofocus;
   final void Function(String)? onFieldSubmitted;
   final String? autofillHint;
-
+  final bool showBorder;
+  final Widget? perfix;
   @override
   State<CommonTextField> createState() => _CommonTextFieldState();
 }
@@ -132,12 +135,19 @@ class _CommonTextFieldState extends State<CommonTextField> {
 
   @override
   Widget build(BuildContext context) {
-    final int maxLines = widget.largeField ? 8 : 1;
+    final int maxLines = widget.largeField ? 4 : 1;
 
-    final InputBorder defaultInputBorder = OutlineInputBorder(
-      borderSide: BorderSide.none,
-      borderRadius: borderRadius,
-    );
+    final InputBorder defaultInputBorder = widget.showBorder
+        ? OutlineInputBorder(
+            borderSide: const BorderSide(
+              color: ConfigColors.black,
+            ),
+            borderRadius: borderRadius,
+          )
+        : OutlineInputBorder(
+            borderSide: BorderSide.none,
+            borderRadius: borderRadius,
+          );
 
     final String? hintText;
     hintText = widget.isRequired ? '${widget.hintText}*' : widget.hintText;
@@ -195,6 +205,7 @@ class _CommonTextFieldState extends State<CommonTextField> {
         fontFamily: FontFamily.inter,
       ),
       decoration: InputDecoration(
+        prefix: widget.perfix,
         contentPadding: EdgeInsets.only(
           left: 16,
           top: 16,
@@ -254,13 +265,14 @@ class _CommonTextFieldState extends State<CommonTextField> {
                   ),
                 ),
               ),
-        prefixIcon: widget.prefixText != null
-            ? Padding(
-                padding: const EdgeInsets.fromLTRB(15, 14, 8, 15),
-                child: widget.prefixText,
-              )
-            : widget.prefixIcon != null
-                ? setupIcon(widget.prefixIcon!)
+        prefixIcon: widget.prefixIcon != null
+            // ? setupIcon(widget.prefixIcon!)
+            ? widget.perfix
+            : widget.prefixText != null
+                ? Padding(
+                    padding: const EdgeInsets.fromLTRB(15, 14, 8, 15),
+                    child: widget.prefixText,
+                  )
                 : null,
       ),
     );
@@ -321,7 +333,7 @@ class _CommonTextFieldState extends State<CommonTextField> {
     return Icon(
       iconData,
       color: ConfigColors.blueGrey,
-      size: 24,
+      size: 20,
     );
   }
 }

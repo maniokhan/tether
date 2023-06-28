@@ -12,6 +12,7 @@ class ProviderTile extends StatelessWidget {
     required this.providerStatus,
     required this.rating,
     required this.noOfReviews,
+    this.isFavorite = false,
     super.key,
   });
   final String providerName;
@@ -19,6 +20,7 @@ class ProviderTile extends StatelessWidget {
   final double rating;
   final int noOfReviews;
   final String providerImage;
+  final bool isFavorite;
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +46,26 @@ class ProviderTile extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                AppText.paragraphS14(providerName),
+                SizedBox(
+                  width: MediaQuery.of(context).size.width * 0.58,
+                  child: Row(
+                    children: [
+                      AppText.paragraphS14(providerName),
+                      const Spacer(),
+                      if (isFavorite)
+                        const Icon(
+                          Icons.favorite,
+                          color: Colors.red,
+                        )
+                      else
+                        const Icon(
+                          Icons.favorite,
+                          color: Colors.transparent,
+                        ),
+                      gapH20
+                    ],
+                  ),
+                ),
                 AppText.paragraphI14(
                   providerStatus,
                   fontWeight: FontWeight.w400,

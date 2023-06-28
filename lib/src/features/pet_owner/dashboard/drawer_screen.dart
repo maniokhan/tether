@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tether_pet_owner/src/assets/assets.gen.dart';
 import 'package:tether_pet_owner/src/features/medical_records/medical_records_screen.dart';
-import 'package:tether_pet_owner/src/features/profile/profile_screen.dart';
+import 'package:tether_pet_owner/src/features/pet_owner/profile/profile_screen.dart';
 import 'package:tether_pet_owner/src/features/settings/settings_screen.dart';
 import 'package:tether_pet_owner/src/theme/config_colors.dart';
 import 'package:tether_pet_owner/src/theme/text.dart';
@@ -24,12 +24,9 @@ class DrawerScreen extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                // Assets.tetherLogo.image(),
-                // Assets.provider.svg(),
                 CircleAvatar(
                   radius: 32,
                   backgroundImage: AssetImage(
-                    // Assets.profilePhoto.path,
                     Assets.profilePhoto.path,
                   ),
                 ),

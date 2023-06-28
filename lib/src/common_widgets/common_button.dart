@@ -5,6 +5,10 @@ import 'package:tether_pet_owner/src/theme/config_colors.dart';
 import 'package:tether_pet_owner/src/utilities/synapp_widget_size.dart';
 
 enum SynappButtonColor {
+  red(
+    ConfigColors.textRed,
+    ConfigColors.white,
+  ),
   primary(
     ConfigColors.primary,
     ConfigColors.white,

@@ -80,9 +80,7 @@ class _SigninScreenState extends State<SigninScreen> {
             ),
             gapH8,
             const CommonPasswordInput(),
-            const SizedBox(
-              height: 32,
-            ),
+            gapH32,
             CommonButton(
               text: 'Log In',
               onPress: () => Navigator.push(context, DashBoardScreen.route()),
