@@ -68,7 +68,7 @@ class _SigninScreenState extends State<SignupScreen> {
             gapH8,
             const CommonTextField(
               hintText: 'Add Prefix',
-              textInputType: TextInputType.emailAddress,
+              textInputType: TextInputType.text,
             ),
             gapH24,
             CommonTextFieldTitle(
@@ -78,7 +78,7 @@ class _SigninScreenState extends State<SignupScreen> {
             gapH8,
             const CommonTextField(
               hintText: 'Add Full Name (First,Last)',
-              textInputType: TextInputType.emailAddress,
+              textInputType: TextInputType.text,
             ),
             gapH24,
             CommonTextFieldTitle(

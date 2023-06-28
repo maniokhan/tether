@@ -68,12 +68,13 @@ class CommonTextField extends StatefulWidget {
     this.autofillHint,
     this.showBorder = false,
     this.perfix,
+    this.enabled = true,
   });
 
   final String? Function(String?)? validator;
   final String? hintText;
   final String? errorMessage;
-  final IconData? suffixIcon;
+  final Widget? suffixIcon;
   final Widget? prefixIcon;
   final Text? prefixText;
   final void Function()? onSuffixIconPressed;
@@ -96,6 +97,7 @@ class CommonTextField extends StatefulWidget {
   final String? autofillHint;
   final bool showBorder;
   final Widget? perfix;
+  final bool enabled;
   @override
   State<CommonTextField> createState() => _CommonTextFieldState();
 }
@@ -115,7 +117,7 @@ class _CommonTextFieldState extends State<CommonTextField> {
 
   List<Widget> get fieldIcons => <Widget>[
         if (fieldState.suffixIcon != null) fieldState.suffixIcon!,
-        if (widget.suffixIcon != null) setupIcon(widget.suffixIcon!),
+        if (widget.suffixIcon != null) setupIcon(widget.suffixIcon!, size: 32),
       ];
 
   bool markedAsCorrect = false;
@@ -178,6 +180,7 @@ class _CommonTextFieldState extends State<CommonTextField> {
     InputBorder defaultInputBorder,
   ) {
     return TextFormField(
+      enabled: widget.enabled,
       autofocus: widget.autofocus,
       onFieldSubmitted: widget.onFieldSubmitted,
       textCapitalization:
@@ -239,6 +242,7 @@ class _CommonTextFieldState extends State<CommonTextField> {
           }
         }),
         enabledBorder: defaultInputBorder,
+        border: defaultInputBorder,
         focusedBorder: OutlineInputBorder(
           borderSide: selectedBorderSide,
           borderRadius: borderRadius,
@@ -266,8 +270,7 @@ class _CommonTextFieldState extends State<CommonTextField> {
                 ),
               ),
         prefixIcon: widget.prefixIcon != null
-            // ? setupIcon(widget.prefixIcon!)
-            ? widget.perfix
+            ? setupIcon(widget.prefixIcon!, size: 14)
             : widget.prefixText != null
                 ? Padding(
                     padding: const EdgeInsets.fromLTRB(15, 14, 8, 15),
@@ -329,11 +332,17 @@ class _CommonTextFieldState extends State<CommonTextField> {
     return errorMessage;
   }
 
-  Icon setupIcon(IconData iconData) {
-    return Icon(
-      iconData,
-      color: ConfigColors.blueGrey,
-      size: 20,
+  // Icon setupIcon(IconData iconData) {
+  //   return Icon(
+  //     iconData,
+  //     color: ConfigColors.blueGrey,
+  //     size: 20,
+  //   );
+  // }
+  Widget setupIcon(Widget prefixIcon, {double size = 16}) {
+    return Transform.scale(
+      scale: size / 34,
+      child: prefixIcon,
     );
   }
 }

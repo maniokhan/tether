@@ -74,7 +74,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
           gapH8,
           const CommonTextField(
             hintText: 'Add Full Name (First,Last)',
-            textInputType: TextInputType.emailAddress,
+            textInputType: TextInputType.text,
             showBorder: true,
           ),
           gapH24,
@@ -96,7 +96,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
           gapH8,
           const CommonTextField(
             hintText: 'Add Phone Number',
-            textInputType: TextInputType.emailAddress,
+            textInputType: TextInputType.phone,
             showBorder: true,
           ),
           gapH24,
@@ -107,7 +107,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
           gapH8,
           const CommonTextField(
             hintText: 'Enter Address',
-            textInputType: TextInputType.emailAddress,
+            textInputType: TextInputType.streetAddress,
             largeField: true,
             showBorder: true,
           ),
