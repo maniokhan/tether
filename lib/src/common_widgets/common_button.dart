@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:tether_pet_owner/src/assets/fonts.gen.dart';
-import 'package:tether_pet_owner/src/common_widgets/synapp_circular_progress_indicator.dart';
-import 'package:tether_pet_owner/src/theme/config_colors.dart';
-import 'package:tether_pet_owner/src/utilities/synapp_widget_size.dart';
+import 'package:tetherapp1/src/assets/fonts.gen.dart';
+import 'package:tetherapp1/src/common_widgets/synapp_circular_progress_indicator.dart';
+import 'package:tetherapp1/src/theme/config_colors.dart';
+import 'package:tetherapp1/src/utilities/synapp_widget_size.dart';
 
 enum SynappButtonColor {
   primary(

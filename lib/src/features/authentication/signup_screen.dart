@@ -1,15 +1,15 @@
 // ignore_for_file: always_specify_types
 
 import 'package:flutter/material.dart';
-import 'package:tether_pet_owner/src/assets/assets.gen.dart';
-import 'package:tether_pet_owner/src/common_widgets/common_button.dart';
-import 'package:tether_pet_owner/src/common_widgets/common_password.dart';
-import 'package:tether_pet_owner/src/common_widgets/common_text_field.dart';
-import 'package:tether_pet_owner/src/common_widgets/common_text_field_title.dart';
-import 'package:tether_pet_owner/src/constants/app_sizes.dart';
-import 'package:tether_pet_owner/src/features/authentication/user_role_screen.dart';
-import 'package:tether_pet_owner/src/theme/config_colors.dart';
-import 'package:tether_pet_owner/src/theme/text.dart';
+import 'package:tetherapp1/src/assets/assets.gen.dart';
+import 'package:tetherapp1/src/common_widgets/common_button.dart';
+import 'package:tetherapp1/src/common_widgets/common_password.dart';
+import 'package:tetherapp1/src/common_widgets/common_text_field.dart';
+import 'package:tetherapp1/src/common_widgets/common_text_field_title.dart';
+import 'package:tetherapp1/src/constants/app_sizes.dart';
+import 'package:tetherapp1/src/features/authentication/user_role_screen.dart';
+import 'package:tetherapp1/src/theme/config_colors.dart';
+import 'package:tetherapp1/src/theme/text.dart';
 
 class SignupScreen extends StatefulWidget {
   const SignupScreen({super.key});

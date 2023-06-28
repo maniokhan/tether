@@ -1,4 +1,4 @@
-import 'package:tether_pet_owner/src/utilities/requirement.dart';
+import 'package:tetherapp1/src/utilities/requirement.dart';
 
 class Validators {
   static bool required(String? value) {

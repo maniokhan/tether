@@ -192,8 +192,8 @@
 // }
 
 import 'package:flutter/widgets.dart';
-import 'package:tether_pet_owner/src/theme/data.dart';
-import 'package:tether_pet_owner/src/theme/theme.dart';
+import 'package:tetherapp1/src/theme/data.dart';
+import 'package:tetherapp1/src/theme/theme.dart';
 
 enum AppTextLevel {
   paragraphS10,

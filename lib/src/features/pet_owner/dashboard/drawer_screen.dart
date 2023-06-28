@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:tether_pet_owner/src/assets/assets.gen.dart';
-import 'package:tether_pet_owner/src/features/medical_records/medical_records_screen.dart';
-import 'package:tether_pet_owner/src/features/profile/profile_screen.dart';
-import 'package:tether_pet_owner/src/features/settings/settings_screen.dart';
-import 'package:tether_pet_owner/src/theme/config_colors.dart';
-import 'package:tether_pet_owner/src/theme/text.dart';
+import 'package:tetherapp1/src/assets/assets.gen.dart';
+import 'package:tetherapp1/src/features/medical_records/medical_records_screen.dart';
+import 'package:tetherapp1/src/features/profile/profile_screen.dart';
+import 'package:tetherapp1/src/features/settings/settings_screen.dart';
+import 'package:tetherapp1/src/theme/config_colors.dart';
+import 'package:tetherapp1/src/theme/text.dart';
 
 class DrawerScreen extends StatelessWidget {
   const DrawerScreen({
@@ -37,7 +37,7 @@ class DrawerScreen extends StatelessWidget {
                   height: 12,
                 ),
                 const AppText.titleS20(
-                  'Abubakar Shaikh',
+                  'tetherpets Shaikh',
                   color: Colors.white,
                   fontSize: 18,
                 ),
@@ -45,7 +45,7 @@ class DrawerScreen extends StatelessWidget {
                   height: 2.5,
                 ),
                 const AppText.titleS20(
-                  'shaikhabubakar983@gmail.com',
+                  'shaikhtetherpets983@gmail.com',
                   color: Colors.white,
                   fontSize: 12,
                   fontWeight: FontWeight.w400,

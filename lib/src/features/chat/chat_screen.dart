@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:tether_pet_owner/src/assets/assets.gen.dart';
-import 'package:tether_pet_owner/src/features/chat/message_screen.dart';
-import 'package:tether_pet_owner/src/theme/text.dart';
+import 'package:tetherapp1/src/assets/assets.gen.dart';
+import 'package:tetherapp1/src/features/chat/message_screen.dart';
+import 'package:tetherapp1/src/theme/text.dart';
 
 class ChatScreen extends StatelessWidget {
   ChatScreen({super.key});
@@ -26,93 +26,95 @@ class ChatScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        const SizedBox(height: 20),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
-          child: Container(
+    return Scaffold(
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const SizedBox(height: 20),
+          Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),
-              color: Colors.white,
-              boxShadow: const [
-                BoxShadow(
-                  color: Colors.black12,
-                  blurRadius: 10,
-                  spreadRadius: 2,
-                ),
-              ],
-            ),
-            child: const Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Expanded(
-                  child: TextField(
-                    decoration: InputDecoration(
-                      hintText: 'Search',
-                      border: InputBorder.none,
+            child: Container(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                color: Colors.white,
+                boxShadow: const [
+                  BoxShadow(
+                    color: Colors.black12,
+                    blurRadius: 10,
+                    spreadRadius: 2,
+                  ),
+                ],
+              ),
+              child: const Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Expanded(
+                    child: TextField(
+                      decoration: InputDecoration(
+                        hintText: 'Search',
+                        border: InputBorder.none,
+                      ),
                     ),
                   ),
-                ),
-                Icon(
-                  Icons.search,
-                  size: 30,
-                ),
-              ],
+                  Icon(
+                    Icons.search,
+                    size: 30,
+                  ),
+                ],
+              ),
             ),
           ),
-        ),
-        const SizedBox(height: 16),
-        const Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20),
-          child: AppText.paragraphS16(
-            'Active Now',
-            fontWeight: FontWeight.w700,
-            textAlign: TextAlign.start,
+          const SizedBox(height: 16),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20),
+            child: AppText.paragraphS16(
+              'Active Now',
+              fontWeight: FontWeight.w700,
+              textAlign: TextAlign.start,
+            ),
           ),
-        ),
-        const SizedBox(height: 10),
-        Padding(
-          padding: const EdgeInsets.only(left: 20.0),
-          child: DoctorCategoryTile(img: img),
-        ),
-        Expanded(
-          child: ListView.builder(
-            physics: const BouncingScrollPhysics(),
-            itemCount: img.length,
-            shrinkWrap: true,
-            itemBuilder: (BuildContext context, int index) {
-              return Padding(
-                padding: const EdgeInsets.symmetric(vertical: 4.0),
-                child: ListTile(
-                  onTap: () {
-                    Navigator.push(context, MessageScreen.route());
-                  },
-                  leading: CircleAvatar(
-                    radius: 30,
-                    backgroundImage: AssetImage('${img[index]}'),
-                  ),
-                  title: const AppText.titleS20(
-                    'Dr. Doctor Name',
-                    fontSize: 18,
-                    fontWeight: FontWeight.w700,
-                  ),
-                  subtitle: const AppText.paragraphI14(
-                    'Hello, Doctor are you there?',
-                    color: Colors.black54,
-                  ),
-                  trailing: const AppText.paragraphI14(
-                    '12: 30',
-                    color: Colors.black54,
-                  ),
-                ),
-              );
-            },
+          const SizedBox(height: 10),
+          Padding(
+            padding: const EdgeInsets.only(left: 20.0),
+            child: DoctorCategoryTile(img: img),
           ),
-        )
-      ],
+          Expanded(
+            child: ListView.builder(
+              physics: const BouncingScrollPhysics(),
+              itemCount: img.length,
+              shrinkWrap: true,
+              itemBuilder: (BuildContext context, int index) {
+                return Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 4.0),
+                  child: ListTile(
+                    onTap: () {
+                      Navigator.push(context, MessageScreen.route());
+                    },
+                    leading: CircleAvatar(
+                      radius: 30,
+                      backgroundImage: AssetImage('${img[index]}'),
+                    ),
+                    title: const AppText.titleS20(
+                      'Dr. Doctor Name',
+                      fontSize: 18,
+                      fontWeight: FontWeight.w700,
+                    ),
+                    subtitle: const AppText.paragraphI14(
+                      'Hello, Doctor are you there?',
+                      color: Colors.black54,
+                    ),
+                    trailing: const AppText.paragraphI14(
+                      '12: 30',
+                      color: Colors.black54,
+                    ),
+                  ),
+                );
+              },
+            ),
+          )
+        ],
+      ),
     );
   }
 }

@@ -1,6 +1,6 @@
 {
-    "name": "tether_pet_owner",
-    "short_name": "tether_pet_owner",
+    "name": "tetherapp1",
+    "short_name": "tetherapp1",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

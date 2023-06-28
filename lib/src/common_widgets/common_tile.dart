@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:tether_pet_owner/src/common_widgets/common_card.dart';
-import 'package:tether_pet_owner/src/constants/app_sizes.dart';
-import 'package:tether_pet_owner/src/theme/text.dart';
+import 'package:tetherapp1/src/common_widgets/common_card.dart';
+import 'package:tetherapp1/src/constants/app_sizes.dart';
+import 'package:tetherapp1/src/theme/text.dart';
 
 class CommonTile extends StatelessWidget {
   const CommonTile({

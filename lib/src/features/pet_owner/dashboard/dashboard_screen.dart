@@ -1,17 +1,17 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:tether_pet_owner/src/assets/assets.gen.dart';
-import 'package:tether_pet_owner/src/common_widgets/common_card.dart';
-import 'package:tether_pet_owner/src/common_widgets/common_tile.dart';
-import 'package:tether_pet_owner/src/constants/app_sizes.dart';
-import 'package:tether_pet_owner/src/features/chat/chat_screen.dart';
-import 'package:tether_pet_owner/src/features/notification/notification_screen.dart';
-import 'package:tether_pet_owner/src/features/pet_owner/appointments/appointment_screen.dart';
-import 'package:tether_pet_owner/src/features/pet_owner/dashboard/drawer_screen.dart';
-import 'package:tether_pet_owner/src/features/pet_owner/pets/pet_screen.dart';
-import 'package:tether_pet_owner/src/theme/config_colors.dart';
-import 'package:tether_pet_owner/src/theme/text.dart';
+import 'package:tetherapp1/src/assets/assets.gen.dart';
+import 'package:tetherapp1/src/common_widgets/common_card.dart';
+import 'package:tetherapp1/src/common_widgets/common_tile.dart';
+import 'package:tetherapp1/src/constants/app_sizes.dart';
+import 'package:tetherapp1/src/features/chat/chat_screen.dart';
+import 'package:tetherapp1/src/features/notification/notification_screen.dart';
+import 'package:tetherapp1/src/features/pet_owner/appointments/appointment_screen.dart';
+import 'package:tetherapp1/src/features/pet_owner/dashboard/drawer_screen.dart';
+import 'package:tetherapp1/src/features/pet_owner/pets/pet_screen.dart';
+import 'package:tetherapp1/src/theme/config_colors.dart';
+import 'package:tetherapp1/src/theme/text.dart';
 
 class DashBoardScreen extends ConsumerStatefulWidget {
   const DashBoardScreen({super.key});

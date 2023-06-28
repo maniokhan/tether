@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tether_pet_owner/src/l10n/l10n.dart';
+import 'package:tetherapp1/src/l10n/l10n.dart';
 
 enum Requirement {
   atLeast12Character(r'^.{12,}$'),

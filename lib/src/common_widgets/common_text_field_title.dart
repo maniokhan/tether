@@ -1,6 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
-import 'package:tether_pet_owner/src/theme/text.dart';
+import 'package:tetherapp1/src/theme/text.dart';
 
 class CommonTextFieldTitle extends StatelessWidget {
   final Widget leading;

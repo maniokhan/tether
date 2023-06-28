@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:tether_pet_owner/src/theme/config_colors.dart';
-import 'package:tether_pet_owner/src/theme/text.dart';
+import 'package:tetherapp1/src/theme/config_colors.dart';
+import 'package:tetherapp1/src/theme/text.dart';
 
 class NotificationScreen extends StatelessWidget {
   const NotificationScreen({super.key});

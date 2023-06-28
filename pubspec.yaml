@@ -1,8 +1,8 @@
-name: tether_pet_owner
+name: tetherapp1
 description: A new Flutter project.
 publish_to: 'none'
 
-version: 1.0.0+1
+version: 2.0.0+2
 
 environment:
   sdk: '>=3.0.3 <4.0.0'
@@ -34,6 +34,7 @@ dev_dependencies:
   freezed: ^2.3.2
 
   very_good_analysis: ^5.0.0+1
+
 
 
 
