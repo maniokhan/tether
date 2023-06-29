@@ -1,16 +1,14 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:tether_pet_owner/src/assets/assets.gen.dart';
 import 'package:tether_pet_owner/src/common_widgets/common_appointment_tile.dart';
+import 'package:tether_pet_owner/src/common_widgets/common_text_field.dart';
 import 'package:tether_pet_owner/src/common_widgets/common_tile.dart';
-import 'package:tether_pet_owner/src/common_widgets/provider_tile.dart';
 import 'package:tether_pet_owner/src/constants/app_sizes.dart';
 import 'package:tether_pet_owner/src/features/chat/chat_screen.dart';
 import 'package:tether_pet_owner/src/features/notification/notification_screen.dart';
-import 'package:tether_pet_owner/src/features/pet_owner/appointments/appointment_screen.dart';
-import 'package:tether_pet_owner/src/features/pet_owner/dashboard/drawer_screen.dart';
-import 'package:tether_pet_owner/src/features/pet_owner/pets/pet_screen.dart';
-import 'package:tether_pet_owner/src/features/pet_owner/providers_screen.dart';
+import 'package:tether_pet_owner/src/features/provider/appointments/provider_appointments_screen.dart';
+import 'package:tether_pet_owner/src/features/provider/dashboard/drawer_screen.dart';
+import 'package:tether_pet_owner/src/features/provider/patients/patients_screen.dart';
 import 'package:tether_pet_owner/src/theme/config_colors.dart';
 import 'package:tether_pet_owner/src/theme/text.dart';
 
@@ -50,19 +48,12 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
             ),
             label: 'Home',
           ),
-          const NavigationDestination(
-            icon: Icon(
-              CupertinoIcons.paw_solid,
-              color: ConfigColors.secondary,
-            ),
-            label: 'Pets',
-          ),
           NavigationDestination(
-            icon: Assets.checkup.svg(
+            icon: Assets.patientsIcon.svg(
               color: ConfigColors.secondary,
               height: 25,
             ),
-            label: 'checkup',
+            label: 'patients',
           ),
           NavigationDestination(
             icon: Assets.appointment.svg(
@@ -75,18 +66,33 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
       ),
       body: <Widget>[
         const HomeView(),
-        PetScreen(),
-        const ProvidersScreen(),
+        const PatientScreen(),
         const AppointmentScreen(),
       ][currentPageIndex],
     );
   }
 }
 
-class HomeView extends StatelessWidget {
+class HomeView extends StatefulWidget {
   const HomeView({
     super.key,
   });
+
+  @override
+  State<HomeView> createState() => _HomeViewState();
+}
+
+class _HomeViewState extends State<HomeView> {
+  List<String> daysNames = [
+    'Mon',
+    'Tue',
+    'Wed',
+    'Thu',
+    'Fri',
+    'Sat',
+  ];
+
+  int selectedContainerIndex = -1;
 
   @override
   Widget build(BuildContext context) {
@@ -122,30 +128,6 @@ class HomeView extends StatelessWidget {
       body: ListView(
         padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
         children: <Widget>[
-          gapH20,
-          const Row(
-            children: [
-              AppText.paragraphI16(
-                'Upcoming Appointments',
-                fontWeight: FontWeight.w600,
-              ),
-              Spacer(),
-              InkWell(
-                child: AppText.paragraphI12(
-                  'See all',
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-            ],
-          ),
-          gapH20,
-          CommonAppointmentTile(
-            image: Assets.doctor4.path,
-            name: 'Dr. William Watt',
-            providerStatus: 'Verterinarian',
-            date: 'Monday, Jan 20',
-            time: '08:00am',
-          ),
           gapH20,
           const Row(
             children: [
@@ -186,15 +168,15 @@ class HomeView extends StatelessWidget {
           ),
           gapH20,
           const CommonTile(
-            text: 'Pro Grooming',
-            date: 'Date: June 13, 2023',
-            timeAgo: '2 dayss ago',
+            text: 'From: Taylor Gooch',
+            date: 'Date: June 14, 2023',
+            timeAgo: '1 day ago',
           ),
           gapH20,
           const Row(
             children: [
               AppText.paragraphI16(
-                'Top Providers',
+                'Upcoming Appointments',
                 fontWeight: FontWeight.w600,
               ),
               Spacer(),
@@ -207,27 +189,106 @@ class HomeView extends StatelessWidget {
             ],
           ),
           gapH20,
-          ProviderTile(
-            providerImage: Assets.doctor1.path,
-            providerName: 'Dr. Maria J.K',
-            providerStatus: 'Veterinarian',
-            rating: 5.0,
-            noOfReviews: 62,
+          Row(
+            children: [
+              Container(
+                height: 40,
+                width: 80,
+                decoration: BoxDecoration(
+                  color: CommonFieldState.idle.backgroundColor,
+                  borderRadius: BorderRadius.circular(6),
+                ),
+                child: const Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    AppText.paragraphI16(
+                      'June',
+                      fontWeight: FontWeight.w400,
+                    ),
+                    Icon(
+                      Icons.arrow_drop_down,
+                      size: 32,
+                      color: ConfigColors.primary,
+                    ),
+                  ],
+                ),
+              ),
+            ],
           ),
-          ProviderTile(
-            providerImage: Assets.doctor2.path,
-            providerName: 'Dr. Roberto Williams',
-            providerStatus: 'Veterinarian',
-            rating: 4.0,
-            noOfReviews: 45,
+          gapH20,
+          SizedBox(
+            height: 60,
+            child: ListView.builder(
+              scrollDirection: Axis.horizontal,
+              itemCount: 7,
+              itemBuilder: (BuildContext context, int index) {
+                if (index == 6) {
+                  return const Icon(
+                    Icons.arrow_forward_rounded,
+                    color: ConfigColors.primary,
+                    size: 25,
+                  );
+                }
+                return GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      selectedContainerIndex = index;
+                    });
+                  },
+                  child: Container(
+                    margin: const EdgeInsets.only(right: 10),
+                    width: 50,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(6),
+                      color: ConfigColors.white,
+                      border: Border.all(color: ConfigColors.black),
+                    ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        AppText.paragraphI10(
+                          daysNames[index],
+                          fontWeight: FontWeight.w500,
+                          color: selectedContainerIndex == index
+                              ? ConfigColors.primary
+                              : ConfigColors.black,
+                        ),
+                        const Padding(
+                          padding: EdgeInsets.only(left: 8, right: 8),
+                          child: Divider(
+                            color: ConfigColors.black,
+                            thickness: 1,
+                          ),
+                        ),
+                        AppText.paragraphI10(
+                          '0${index + 1}',
+                          fontWeight: FontWeight.w500,
+                          color: selectedContainerIndex == index
+                              ? ConfigColors.primary
+                              : ConfigColors.black,
+                        ),
+                      ],
+                    ),
+                  ),
+                );
+              },
+            ),
           ),
-          ProviderTile(
-            providerImage: Assets.doctor3.path,
-            providerName: 'Dr. Peter Long',
-            providerStatus: 'Gynecologist',
-            rating: 4.5,
-            noOfReviews: 82,
+          gapH20,
+          CommonAppointmentTile(
+            image: Assets.doctor4.path,
+            name: 'Cameron Smith',
+            date: 'Monday, Jan 20',
+            time: '08:00am',
           ),
+          gapH20,
+          CommonAppointmentTile(
+            image: Assets.doctor2.path,
+            name: 'Taylor Gooch',
+            date: 'Monday, Jan 20',
+            time: '09:00am',
+          ),
+          gapH20,
         ],
       ),
     );

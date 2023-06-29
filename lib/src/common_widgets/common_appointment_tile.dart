@@ -9,21 +9,20 @@ class CommonAppointmentTile extends StatelessWidget {
   const CommonAppointmentTile({
     required this.image,
     required this.name,
-    required this.providerStatus,
     required this.date,
     required this.time,
+    this.providerStatus,
     super.key,
   });
   final String name;
   final String image;
-  final String providerStatus;
+  final String? providerStatus;
   final String date;
   final String time;
 
   @override
   Widget build(BuildContext context) {
     return CommonCard(
-      height: 170,
       alignment: Alignment.center,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -39,10 +38,12 @@ class CommonAppointmentTile extends StatelessWidget {
               // fontSize: 18,
               fontWeight: FontWeight.w700,
             ),
-            subtitle: AppText.paragraphI14(
-              providerStatus,
-              color: Colors.black54,
-            ),
+            subtitle: providerStatus != null
+                ? AppText.paragraphI14(
+                    providerStatus!,
+                    color: Colors.black54,
+                  )
+                : null,
           ),
           gapH8,
           CommonCard(

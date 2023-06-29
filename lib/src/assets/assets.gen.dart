@@ -45,6 +45,8 @@ class Assets {
       SvgGenImage('assets/nickNameIcon.svg');
   static const SvgGenImage notofication =
       SvgGenImage('assets/notofication.svg');
+  static const SvgGenImage patientsIcon =
+      SvgGenImage('assets/patientsIcon.svg');
   static const AssetGenImage persianCat1 =
       AssetGenImage('assets/persian_cat1.jpg');
   static const AssetGenImage persianCat2 =
@@ -92,6 +94,7 @@ class Assets {
         nameIcon,
         nickNameIcon,
         notofication,
+        patientsIcon,
         persianCat1,
         persianCat2,
         petOwner,
