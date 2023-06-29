@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:tetherapp1/src/theme/config_colors.dart';
-import 'package:tetherapp1/src/theme/text.dart';
+import 'package:newtetherpets/src/theme/config_colors.dart';
+import 'package:newtetherpets/src/theme/text.dart';
 
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({super.key});

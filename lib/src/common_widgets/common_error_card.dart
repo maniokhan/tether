@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:tetherapp1/src/assets/fonts.gen.dart';
-import 'package:tetherapp1/src/constants/app_sizes.dart';
-import 'package:tetherapp1/src/theme/config_colors.dart';
+import 'package:newtetherpets/src/assets/fonts.gen.dart';
+import 'package:newtetherpets/src/constants/app_sizes.dart';
+import 'package:newtetherpets/src/theme/config_colors.dart';
 
 class SynappErrorCard extends StatefulWidget {
   const SynappErrorCard({

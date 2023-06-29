@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:tetherapp1/src/assets/assets.gen.dart';
-import 'package:tetherapp1/src/features/chat/message_screen.dart';
-import 'package:tetherapp1/src/theme/text.dart';
+import 'package:newtetherpets/src/assets/assets.gen.dart';
+import 'package:newtetherpets/src/features/chat/message_screen.dart';
+import 'package:newtetherpets/src/theme/text.dart';
 
 class ChatScreen extends StatelessWidget {
   ChatScreen({super.key});

@@ -1,6 +1,6 @@
 {
-    "name": "tetherapp1",
-    "short_name": "tetherapp1",
+    "name": "newtetherpets",
+    "short_name": "newtetherpets",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

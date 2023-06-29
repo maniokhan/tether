@@ -1,7 +1,7 @@
 import 'package:custom_clippers/custom_clippers.dart';
 import 'package:flutter/material.dart';
-import 'package:tetherapp1/src/assets/assets.gen.dart';
-import 'package:tetherapp1/src/theme/text.dart';
+import 'package:newtetherpets/src/assets/assets.gen.dart';
+import 'package:newtetherpets/src/theme/text.dart';
 
 class MessageScreen extends StatelessWidget {
   const MessageScreen({super.key});

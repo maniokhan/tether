@@ -1,8 +1,8 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:tetherapp1/src/theme/colors.dart';
-import 'package:tetherapp1/src/theme/padding.dart';
-import 'package:tetherapp1/src/theme/radius.dart';
-import 'package:tetherapp1/src/theme/typography.dart';
+import 'package:newtetherpets/src/theme/colors.dart';
+import 'package:newtetherpets/src/theme/padding.dart';
+import 'package:newtetherpets/src/theme/radius.dart';
+import 'package:newtetherpets/src/theme/typography.dart';
 
 part 'data.freezed.dart';
 

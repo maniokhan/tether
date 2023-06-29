@@ -5,18 +5,18 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "tetherapp1",
+            "name": "newtetherpets",
             "request": "launch",
             "type": "dart"
         },
         {
-            "name": "tetherapp1 (profile mode)",
+            "name": "newtetherpets (profile mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "profile"
         },
         {
-            "name": "tetherapp1 (release mode)",
+            "name": "newtetherpets (release mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "release"

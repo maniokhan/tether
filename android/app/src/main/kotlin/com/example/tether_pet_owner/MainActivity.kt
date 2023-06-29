@@ -1,4 +1,4 @@
-package com.tetherpets.tetherapp1
+package com.tetherpets.newtetherpets
 
 import io.flutter.embedding.android.FlutterActivity
 

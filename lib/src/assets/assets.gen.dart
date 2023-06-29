@@ -18,6 +18,7 @@ class Assets {
       AssetGenImage('assets/Tether-logo.png');
   static const SvgGenImage appointment = SvgGenImage('assets/appointment.svg');
   static const SvgGenImage checkup = SvgGenImage('assets/checkup.svg');
+  static const SvgGenImage chipAndTag = SvgGenImage('assets/chipAndTag.svg');
   static const SvgGenImage clock = SvgGenImage('assets/clock.svg');
   static const SvgGenImage correct = SvgGenImage('assets/correct.svg');
   static const SvgGenImage dateTime = SvgGenImage('assets/dateTime.svg');
@@ -25,10 +26,17 @@ class Assets {
   static const AssetGenImage doctor2 = AssetGenImage('assets/doctor2.jpg');
   static const AssetGenImage doctor3 = AssetGenImage('assets/doctor3.jpg');
   static const AssetGenImage doctor4 = AssetGenImage('assets/doctor4.jpg');
+  static const AssetGenImage dog1 = AssetGenImage('assets/dog1.png');
+  static const AssetGenImage dog2 = AssetGenImage('assets/dog2.png');
+  static const AssetGenImage dog3 = AssetGenImage('assets/dog3.png');
+  static const SvgGenImage dogIcon = SvgGenImage('assets/dogIcon.svg');
   static const SvgGenImage emailGreen = SvgGenImage('assets/email_green.svg');
   static const SvgGenImage facebook = SvgGenImage('assets/facebook.svg');
   static const SvgGenImage home = SvgGenImage('assets/home.svg');
+  static const SvgGenImage labResults = SvgGenImage('assets/labResults.svg');
   static const SvgGenImage lock = SvgGenImage('assets/lock.svg');
+  static const SvgGenImage medicalRecords =
+      SvgGenImage('assets/medicalRecords.svg');
   static const SvgGenImage message = SvgGenImage('assets/message.svg');
   static const SvgGenImage name = SvgGenImage('assets/name.svg');
   static const SvgGenImage notofication =
@@ -40,6 +48,8 @@ class Assets {
   static const SvgGenImage petOwner = SvgGenImage('assets/petOwner.svg');
   static const SvgGenImage phoneNumber = SvgGenImage('assets/phoneNumber.svg');
   static const SvgGenImage prefix = SvgGenImage('assets/prefix.svg');
+  static const SvgGenImage prescription =
+      SvgGenImage('assets/prescription.svg');
   static const AssetGenImage primaryLogo =
       AssetGenImage('assets/primary_logo.png');
   static const AssetGenImage profilePhoto =
@@ -52,6 +62,7 @@ class Assets {
         tetherLogo,
         appointment,
         checkup,
+        chipAndTag,
         clock,
         correct,
         dateTime,
@@ -59,10 +70,16 @@ class Assets {
         doctor2,
         doctor3,
         doctor4,
+        dog1,
+        dog2,
+        dog3,
+        dogIcon,
         emailGreen,
         facebook,
         home,
+        labResults,
         lock,
+        medicalRecords,
         message,
         name,
         notofication,
@@ -71,6 +88,7 @@ class Assets {
         petOwner,
         phoneNumber,
         prefix,
+        prescription,
         primaryLogo,
         profilePhoto,
         provider,

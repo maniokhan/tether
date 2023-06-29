@@ -1,6 +1,6 @@
 import 'package:flutter/rendering.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:tetherapp1/src/assets/fonts.gen.dart';
+import 'package:newtetherpets/src/assets/fonts.gen.dart';
 
 part 'typography.freezed.dart';
 

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tetherapp1/src/theme/data.dart';
+import 'package:newtetherpets/src/theme/data.dart';
 
 class AppTheme extends InheritedWidget {
   const AppTheme({

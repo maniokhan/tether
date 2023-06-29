@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:tetherapp1/src/assets/assets.gen.dart';
-import 'package:tetherapp1/src/features/medical_records/medical_records_screen.dart';
-import 'package:tetherapp1/src/features/profile/profile_screen.dart';
-import 'package:tetherapp1/src/features/settings/settings_screen.dart';
-import 'package:tetherapp1/src/theme/config_colors.dart';
-import 'package:tetherapp1/src/theme/text.dart';
+import 'package:newtetherpets/src/assets/assets.gen.dart';
+import 'package:newtetherpets/src/features/medical_records/medical_records_screen.dart';
+import 'package:newtetherpets/src/features/profile/profile_screen.dart';
+import 'package:newtetherpets/src/features/settings/settings_screen.dart';
+import 'package:newtetherpets/src/theme/config_colors.dart';
+import 'package:newtetherpets/src/theme/text.dart';
 
 class DrawerScreen extends StatelessWidget {
   const DrawerScreen({
