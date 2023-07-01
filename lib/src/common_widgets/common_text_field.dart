@@ -51,6 +51,7 @@ class CommonTextField extends StatefulWidget {
     this.onSuffixIconPressed,
     this.isOptionField = false,
     this.largeField = false,
+    this.shortField = false,
     this.obscureText = false,
     this.autovalidateMode,
     this.textInputType = TextInputType.text,
@@ -98,6 +99,7 @@ class CommonTextField extends StatefulWidget {
   final bool showBorder;
   final Widget? perfix;
   final bool enabled;
+  final bool shortField;
   @override
   State<CommonTextField> createState() => _CommonTextFieldState();
 }
@@ -174,111 +176,220 @@ class _CommonTextFieldState extends State<CommonTextField> {
         : _buildTextFormField(maxLines, hintText, defaultInputBorder);
   }
 
-  TextFormField _buildTextFormField(
+  Widget _buildTextFormField(
     int maxLines,
     String? hintText,
     InputBorder defaultInputBorder,
   ) {
-    return TextFormField(
-      enabled: widget.enabled,
-      autofocus: widget.autofocus,
-      onFieldSubmitted: widget.onFieldSubmitted,
-      textCapitalization:
-          widget.textCapitalization ?? TextCapitalization.sentences,
-      enableSuggestions: widget.enableSuggestions,
-      autocorrect: widget.enableSuggestions,
-      obscuringCharacter: widget.obscuringCharacter,
-      textInputAction: widget.textInputAction,
-      onChanged: widget.onChanged,
-      inputFormatters: widget.inputFormatters,
-      keyboardType: widget.textInputType,
-      focusNode: widget.focusNode,
-      obscureText: widget.obscureText,
-      validator: validator,
-      autovalidateMode: widget.autovalidateMode,
-      maxLines: maxLines,
-      controller: controller,
-      autofillHints:
-          widget.autofillHint != null ? <String>[widget.autofillHint!] : null,
-      textAlignVertical: TextAlignVertical.top,
-      style: TextStyle(
-        color: ConfigColors.black,
-        fontSize: fontSize,
-        fontWeight: FontWeight.w500,
-        fontFamily: FontFamily.inter,
-      ),
-      decoration: InputDecoration(
-        prefix: widget.perfix,
-        contentPadding: EdgeInsets.only(
-          left: 16,
-          top: 16,
-          right: widget.suffixIcon == null ? 16 : 0,
-        ),
-        hintText: hintText,
-        errorStyle: const TextStyle(
-          height: 0,
-          fontFamily: FontFamily.inter,
-        ),
-        hintStyle: const TextStyle(
-          fontFamily: FontFamily.inter,
-          fontSize: 16,
-          color: ConfigColors.blueGrey,
-          fontWeight: FontWeight.w400,
-        ),
-        filled: true,
-        fillColor: MaterialStateColor.resolveWith((Set<MaterialState> states) {
-          if (inputIsValid != null && inputIsValid!) {
-            fieldState = CommonFieldState.success;
-            return CommonFieldState.success.backgroundColor;
-          } else if (inputIsValid != null && !inputIsValid!) {
-            fieldState = CommonFieldState.error;
-            return CommonFieldState.error.backgroundColor;
-          } else if (states.isFocused) {
-            fieldState = CommonFieldState.focused;
-            return CommonFieldState.focused.backgroundColor;
-          } else {
-            fieldState = CommonFieldState.idle;
-            return CommonFieldState.idle.backgroundColor;
-          }
-        }),
-        enabledBorder: defaultInputBorder,
-        border: defaultInputBorder,
-        focusedBorder: OutlineInputBorder(
-          borderSide: selectedBorderSide,
-          borderRadius: borderRadius,
-        ),
-        errorBorder: defaultInputBorder,
-        focusedErrorBorder: OutlineInputBorder(
-          borderSide: const BorderSide(
-            color: ConfigColors.textRed,
+    if (widget.shortField) {
+      return SizedBox(
+        height: 35,
+        child: TextFormField(
+          enabled: widget.enabled,
+          autofocus: widget.autofocus,
+          onFieldSubmitted: widget.onFieldSubmitted,
+          textCapitalization:
+              widget.textCapitalization ?? TextCapitalization.sentences,
+          enableSuggestions: widget.enableSuggestions,
+          autocorrect: widget.enableSuggestions,
+          obscuringCharacter: widget.obscuringCharacter,
+          textInputAction: widget.textInputAction,
+          onChanged: widget.onChanged,
+          inputFormatters: widget.inputFormatters,
+          keyboardType: widget.textInputType,
+          focusNode: widget.focusNode,
+          obscureText: widget.obscureText,
+          validator: validator,
+          autovalidateMode: widget.autovalidateMode,
+          maxLines: maxLines,
+          controller: controller,
+          autofillHints: widget.autofillHint != null
+              ? <String>[widget.autofillHint!]
+              : null,
+          textAlignVertical: TextAlignVertical.top,
+          style: TextStyle(
+            color: ConfigColors.black,
+            fontSize: fontSize,
+            fontWeight: FontWeight.w500,
+            fontFamily: FontFamily.inter,
           ),
-          borderRadius: borderRadius,
+          decoration: InputDecoration(
+            prefix: widget.perfix,
+            contentPadding: EdgeInsets.only(
+              left: 16,
+              top: 16,
+              right: widget.suffixIcon == null ? 16 : 0,
+            ),
+            hintText: hintText,
+            errorStyle: const TextStyle(
+              height: 0,
+              fontFamily: FontFamily.inter,
+            ),
+            hintStyle: const TextStyle(
+              fontFamily: FontFamily.inter,
+              fontSize: 16,
+              color: ConfigColors.blueGrey,
+              fontWeight: FontWeight.w400,
+            ),
+            filled: true,
+            fillColor:
+                MaterialStateColor.resolveWith((Set<MaterialState> states) {
+              if (inputIsValid != null && inputIsValid!) {
+                fieldState = CommonFieldState.success;
+                return CommonFieldState.success.backgroundColor;
+              } else if (inputIsValid != null && !inputIsValid!) {
+                fieldState = CommonFieldState.error;
+                return CommonFieldState.error.backgroundColor;
+              } else if (states.isFocused) {
+                fieldState = CommonFieldState.focused;
+                return CommonFieldState.focused.backgroundColor;
+              } else {
+                fieldState = CommonFieldState.idle;
+                return CommonFieldState.idle.backgroundColor;
+              }
+            }),
+            enabledBorder: defaultInputBorder,
+            border: defaultInputBorder,
+            focusedBorder: OutlineInputBorder(
+              borderSide: selectedBorderSide,
+              borderRadius: borderRadius,
+            ),
+            errorBorder: defaultInputBorder,
+            focusedErrorBorder: OutlineInputBorder(
+              borderSide: const BorderSide(
+                color: ConfigColors.textRed,
+              ),
+              borderRadius: borderRadius,
+            ),
+            suffixIcon: widget.suffixIcon == null
+                ? null
+                : GestureDetector(
+                    onTap: widget.onSuffixIconPressed,
+                    child: Padding(
+                      padding: const EdgeInsets.only(right: 12),
+                      child: Wrap(
+                        spacing: 10,
+                        alignment: WrapAlignment.end,
+                        runAlignment: WrapAlignment.center,
+                        crossAxisAlignment: WrapCrossAlignment.center,
+                        children: fieldIcons,
+                      ),
+                    ),
+                  ),
+            prefixIcon: widget.prefixIcon != null
+                ? setupIcon(widget.prefixIcon!, size: 14)
+                : widget.prefixText != null
+                    ? Padding(
+                        padding: const EdgeInsets.fromLTRB(15, 14, 8, 15),
+                        child: widget.prefixText,
+                      )
+                    : null,
+          ),
         ),
-        suffixIcon: widget.suffixIcon == null
-            ? null
-            : GestureDetector(
-                onTap: widget.onSuffixIconPressed,
-                child: Padding(
-                  padding: const EdgeInsets.only(right: 12),
-                  child: Wrap(
-                    spacing: 10,
-                    alignment: WrapAlignment.end,
-                    runAlignment: WrapAlignment.center,
-                    crossAxisAlignment: WrapCrossAlignment.center,
-                    children: fieldIcons,
+      );
+    } else {
+      return TextFormField(
+        enabled: widget.enabled,
+        autofocus: widget.autofocus,
+        onFieldSubmitted: widget.onFieldSubmitted,
+        textCapitalization:
+            widget.textCapitalization ?? TextCapitalization.sentences,
+        enableSuggestions: widget.enableSuggestions,
+        autocorrect: widget.enableSuggestions,
+        obscuringCharacter: widget.obscuringCharacter,
+        textInputAction: widget.textInputAction,
+        onChanged: widget.onChanged,
+        inputFormatters: widget.inputFormatters,
+        keyboardType: widget.textInputType,
+        focusNode: widget.focusNode,
+        obscureText: widget.obscureText,
+        validator: validator,
+        autovalidateMode: widget.autovalidateMode,
+        maxLines: maxLines,
+        controller: controller,
+        autofillHints:
+            widget.autofillHint != null ? <String>[widget.autofillHint!] : null,
+        textAlignVertical: TextAlignVertical.top,
+        style: TextStyle(
+          color: ConfigColors.black,
+          fontSize: fontSize,
+          fontWeight: FontWeight.w500,
+          fontFamily: FontFamily.inter,
+        ),
+        decoration: InputDecoration(
+          prefix: widget.perfix,
+          contentPadding: EdgeInsets.only(
+            left: 16,
+            top: 16,
+            right: widget.suffixIcon == null ? 16 : 0,
+          ),
+          hintText: hintText,
+          errorStyle: const TextStyle(
+            height: 0,
+            fontFamily: FontFamily.inter,
+          ),
+          hintStyle: const TextStyle(
+            fontFamily: FontFamily.inter,
+            fontSize: 16,
+            color: ConfigColors.blueGrey,
+            fontWeight: FontWeight.w400,
+          ),
+          filled: true,
+          fillColor:
+              MaterialStateColor.resolveWith((Set<MaterialState> states) {
+            if (inputIsValid != null && inputIsValid!) {
+              fieldState = CommonFieldState.success;
+              return CommonFieldState.success.backgroundColor;
+            } else if (inputIsValid != null && !inputIsValid!) {
+              fieldState = CommonFieldState.error;
+              return CommonFieldState.error.backgroundColor;
+            } else if (states.isFocused) {
+              fieldState = CommonFieldState.focused;
+              return CommonFieldState.focused.backgroundColor;
+            } else {
+              fieldState = CommonFieldState.idle;
+              return CommonFieldState.idle.backgroundColor;
+            }
+          }),
+          enabledBorder: defaultInputBorder,
+          border: defaultInputBorder,
+          focusedBorder: OutlineInputBorder(
+            borderSide: selectedBorderSide,
+            borderRadius: borderRadius,
+          ),
+          errorBorder: defaultInputBorder,
+          focusedErrorBorder: OutlineInputBorder(
+            borderSide: const BorderSide(
+              color: ConfigColors.textRed,
+            ),
+            borderRadius: borderRadius,
+          ),
+          suffixIcon: widget.suffixIcon == null
+              ? null
+              : GestureDetector(
+                  onTap: widget.onSuffixIconPressed,
+                  child: Padding(
+                    padding: const EdgeInsets.only(right: 12),
+                    child: Wrap(
+                      spacing: 10,
+                      alignment: WrapAlignment.end,
+                      runAlignment: WrapAlignment.center,
+                      crossAxisAlignment: WrapCrossAlignment.center,
+                      children: fieldIcons,
+                    ),
                   ),
                 ),
-              ),
-        prefixIcon: widget.prefixIcon != null
-            ? setupIcon(widget.prefixIcon!, size: 14)
-            : widget.prefixText != null
-                ? Padding(
-                    padding: const EdgeInsets.fromLTRB(15, 14, 8, 15),
-                    child: widget.prefixText,
-                  )
-                : null,
-      ),
-    );
+          prefixIcon: widget.prefixIcon != null
+              ? setupIcon(widget.prefixIcon!, size: 14)
+              : widget.prefixText != null
+                  ? Padding(
+                      padding: const EdgeInsets.fromLTRB(15, 14, 8, 15),
+                      child: widget.prefixText,
+                    )
+                  : null,
+        ),
+      );
+    }
   }
 
   Widget _buildMarkedAsCorrect() {

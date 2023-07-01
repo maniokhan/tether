@@ -18,6 +18,10 @@ class Assets {
       AssetGenImage('assets/Tether-logo.png');
   static const SvgGenImage address = SvgGenImage('assets/address.svg');
   static const SvgGenImage appointment = SvgGenImage('assets/appointment.svg');
+  static const SvgGenImage availabilityIcon =
+      SvgGenImage('assets/availabilityIcon.svg');
+  static const SvgGenImage businessIcon =
+      SvgGenImage('assets/businessIcon.svg');
   static const SvgGenImage checkup = SvgGenImage('assets/checkup.svg');
   static const SvgGenImage chipAndTag = SvgGenImage('assets/chipAndTag.svg');
   static const SvgGenImage clock = SvgGenImage('assets/clock.svg');
@@ -45,6 +49,8 @@ class Assets {
       SvgGenImage('assets/nickNameIcon.svg');
   static const SvgGenImage notofication =
       SvgGenImage('assets/notofication.svg');
+  static const SvgGenImage patientsIcon =
+      SvgGenImage('assets/patientsIcon.svg');
   static const AssetGenImage persianCat1 =
       AssetGenImage('assets/persian_cat1.jpg');
   static const AssetGenImage persianCat2 =
@@ -59,8 +65,11 @@ class Assets {
   static const AssetGenImage profilePhoto =
       AssetGenImage('assets/profile_photo.jpeg');
   static const SvgGenImage provider = SvgGenImage('assets/provider.svg');
+  static const SvgGenImage servicesIcon =
+      SvgGenImage('assets/servicesIcon.svg');
   static const SvgGenImage speciesIcon = SvgGenImage('assets/speciesIcon.svg');
   static const SvgGenImage twitter = SvgGenImage('assets/twitter.svg');
+  static const SvgGenImage websiteIcon = SvgGenImage('assets/websiteIcon.svg');
   static const SvgGenImage weightIcon = SvgGenImage('assets/weightIcon.svg');
 
   /// List of all assets
@@ -68,6 +77,8 @@ class Assets {
         tetherLogo,
         address,
         appointment,
+        availabilityIcon,
+        businessIcon,
         checkup,
         chipAndTag,
         clock,
@@ -92,6 +103,7 @@ class Assets {
         nameIcon,
         nickNameIcon,
         notofication,
+        patientsIcon,
         persianCat1,
         persianCat2,
         petOwner,
@@ -101,8 +113,10 @@ class Assets {
         primaryLogo,
         profilePhoto,
         provider,
+        servicesIcon,
         speciesIcon,
         twitter,
+        websiteIcon,
         weightIcon
       ];
 }
