@@ -1,4 +1,11 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:tether_pet_owner/src/assets/assets.gen.dart';
+import 'package:tether_pet_owner/src/constants/app_sizes.dart';
+import 'package:tether_pet_owner/src/features/settings/help_center_screen.dart';
+import 'package:tether_pet_owner/src/features/settings/notification_settings_screen.dart';
+import 'package:tether_pet_owner/src/features/settings/privacy_policy_screen.dart';
+import 'package:tether_pet_owner/src/features/settings/terms_of_use_screen.dart';
 import 'package:tether_pet_owner/src/theme/config_colors.dart';
 import 'package:tether_pet_owner/src/theme/text.dart';
 
@@ -21,8 +28,124 @@ class SettingsScreen extends StatelessWidget {
           color: ConfigColors.white,
         ),
       ),
-      body: const Center(
-        child: Text('Settings'),
+      body: Column(
+        children: [
+          gapH32,
+          CommonSettingsTile(
+            icon: Assets.notofication.svg(
+              height: 24,
+              color: ConfigColors.black,
+            ),
+            settingsName: 'Notifications',
+            onTap: () {
+              Navigator.push(context, NotificationSettingsScreen.route());
+            },
+          ),
+          const CommonSettingsTile(
+            icon: Icon(
+              CupertinoIcons.paw_solid,
+              color: ConfigColors.black,
+            ),
+            settingsName: 'Inactive Pets',
+          ),
+          CommonSettingsTile(
+            icon: Assets.appointment.svg(
+              height: 24,
+              color: ConfigColors.black,
+            ),
+            settingsName: 'Appointment History',
+          ),
+          CommonSettingsTile(
+            icon: const Icon(
+              CupertinoIcons.question,
+              color: ConfigColors.black,
+            ),
+            settingsName: 'Help Center',
+            onTap: () {
+              Navigator.push(context, HelpCenterScreen.route());
+            },
+          ),
+          CommonSettingsTile(
+            icon: const Icon(
+              Icons.privacy_tip_outlined,
+              color: ConfigColors.black,
+            ),
+            settingsName: 'Privacy Policy',
+            onTap: () {
+              Navigator.push(context, PrivacyPolicy.route());
+            },
+          ),
+          CommonSettingsTile(
+            icon: const Icon(
+              CupertinoIcons.doc_text,
+              color: ConfigColors.black,
+            ),
+            settingsName: 'Terms of Use',
+            onTap: () {
+              Navigator.push(context, TermsOfUse.route());
+            },
+          ),
+          const CommonSettingsTile(
+            icon: Icon(
+              Icons.mail_outline_outlined,
+              color: ConfigColors.black,
+            ),
+            settingsName: 'PetDesk Mobile App Support',
+          ),
+          const Spacer(),
+          const AppText.paragraphS14(
+            'Version 0.1',
+            textAlign: TextAlign.center,
+          ),
+          gapH24,
+        ],
+      ),
+    );
+  }
+}
+
+class CommonSettingsTile extends StatelessWidget {
+  const CommonSettingsTile({
+    required this.icon,
+    required this.settingsName,
+    this.onTap,
+    super.key,
+  });
+  final Widget icon;
+  final String settingsName;
+  final Function()? onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        height: 60,
+        decoration: const BoxDecoration(
+          color: Colors.white,
+          boxShadow: [
+            BoxShadow(
+              color: ConfigColors.blueGrey,
+              spreadRadius: 1,
+            ),
+          ],
+        ),
+        alignment: Alignment.center,
+        child: Row(
+          children: [
+            gapW24,
+            icon,
+            gapW16,
+            AppText.paragraphS16(settingsName),
+            const Spacer(),
+            const Icon(
+              Icons.arrow_forward_ios_rounded,
+              color: ConfigColors.blueGrey,
+              size: 20,
+            ),
+            gapW12,
+          ],
+        ),
       ),
     );
   }

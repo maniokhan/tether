@@ -12,19 +12,19 @@ import 'package:tether_pet_owner/src/features/provider/patients/patients_screen.
 import 'package:tether_pet_owner/src/theme/config_colors.dart';
 import 'package:tether_pet_owner/src/theme/text.dart';
 
-class DashBoardScreen extends StatefulWidget {
-  const DashBoardScreen({super.key});
+class ProviderDashBoardScreen extends StatefulWidget {
+  const ProviderDashBoardScreen({super.key});
   static MaterialPageRoute route() {
     return MaterialPageRoute(
-      builder: (BuildContext context) => const DashBoardScreen(),
+      builder: (BuildContext context) => const ProviderDashBoardScreen(),
     );
   }
 
   @override
-  State<StatefulWidget> createState() => _DashBoardScreenState();
+  State<StatefulWidget> createState() => _ProviderDashBoardScreenState();
 }
 
-class _DashBoardScreenState extends State<DashBoardScreen> {
+class _ProviderDashBoardScreenState extends State<ProviderDashBoardScreen> {
   int currentPageIndex = 0;
   @override
   Widget build(BuildContext context) {

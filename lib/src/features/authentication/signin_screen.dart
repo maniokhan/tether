@@ -21,7 +21,6 @@ class SigninScreen extends StatefulWidget {
 
 class _SigninScreenState extends State<SigninScreen> {
   late final TextEditingController _emailController;
-
   late final TextEditingController _passwordController;
 
   @override
