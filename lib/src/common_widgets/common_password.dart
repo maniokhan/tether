@@ -30,8 +30,8 @@ class _CommonPasswordInputState extends State<CommonPasswordInput> {
   bool _obscureConfirmText = true;
   bool _samePassword = true;
 
-  IconData _suffixIcon = Icons.visibility_off;
-  IconData _suffixConfirmIcon = Icons.visibility_off;
+  Icon _suffixIcon = const Icon(Icons.visibility_off);
+  Icon _suffixConfirmIcon = const Icon(Icons.visibility_off);
 
   String password = '';
 
@@ -55,9 +55,9 @@ class _CommonPasswordInputState extends State<CommonPasswordInput> {
             setState(() {
               _obscureText = !_obscureText;
               if (_obscureText) {
-                _suffixIcon = Icons.visibility_off;
+                _suffixIcon = const Icon(Icons.visibility_off);
               } else {
-                _suffixIcon = Icons.visibility;
+                _suffixIcon = const Icon(Icons.visibility);
               }
             });
           },
@@ -79,9 +79,9 @@ class _CommonPasswordInputState extends State<CommonPasswordInput> {
               setState(() {
                 _obscureConfirmText = !_obscureConfirmText;
                 if (_obscureConfirmText) {
-                  _suffixConfirmIcon = Icons.visibility_off;
+                  _suffixConfirmIcon = const Icon(Icons.visibility_off);
                 } else {
-                  _suffixConfirmIcon = Icons.visibility;
+                  _suffixConfirmIcon = const Icon(Icons.visibility);
                 }
               });
             },

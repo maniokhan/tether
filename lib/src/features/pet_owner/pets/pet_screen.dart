@@ -105,40 +105,6 @@ class PetScreen extends StatelessWidget {
                   }
                 },
               ),
-
-              // ListView(
-              //   scrollDirection: Axis.horizontal,
-              //   physics: const BouncingScrollPhysics(),
-              //   children: [
-              //     ListView.builder(
-              //       scrollDirection: Axis.horizontal,
-              //       physics: const NeverScrollableScrollPhysics(),
-              //       itemCount: images.length,
-              //       itemBuilder: (BuildContext context, int index) {
-              //         return Padding(
-              //           padding: const EdgeInsets.all(8.0),
-              //           child: Column(
-              //             children: [
-              //               Container(
-              //                 height: 60,
-              //                 width: 60,
-              //                 decoration: BoxDecoration(
-              //                   shape: BoxShape.circle,
-              //                   image: DecorationImage(
-              //                     image: AssetImage(Assets.dog1.path),
-              //                     fit: BoxFit.cover,
-              //                   ),
-              //                 ),
-              //               ),
-              //               gapH4,
-              //               const AppText.paragraphS14('Diana'),
-              //             ],
-              //           ),
-              //         );
-              //       },
-              //     )
-              //   ],
-              // ),
             ),
           ),
           Padding(

@@ -20,16 +20,16 @@ class SigninScreen extends StatefulWidget {
 }
 
 class _SigninScreenState extends State<SigninScreen> {
-  late final TextEditingController _emailController;
+  // late final TextEditingController _emailController;
 
-  late final TextEditingController _passwordController;
+  // late final TextEditingController _passwordController;
 
-  @override
-  void initState() {
-    _emailController = TextEditingController();
-    _passwordController = TextEditingController();
-    super.initState();
-  }
+  // @override
+  // void initState() {
+  //   _emailController = TextEditingController();
+  //   _passwordController = TextEditingController();
+  //   super.initState();
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -80,9 +80,7 @@ class _SigninScreenState extends State<SigninScreen> {
             ),
             gapH8,
             const CommonPasswordInput(),
-            const SizedBox(
-              height: 32,
-            ),
+            gapH32,
             CommonButton(
               text: 'Log In',
               onPress: () => Navigator.push(context, DashBoardScreen.route()),

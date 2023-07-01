@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:newtetherpets/src/assets/assets.gen.dart';
 import 'package:newtetherpets/src/common_widgets/common_appointment_tile.dart';
 import 'package:newtetherpets/src/common_widgets/common_tile.dart';
@@ -15,20 +14,19 @@ import 'package:newtetherpets/src/features/pet_owner/providers_screen.dart';
 import 'package:newtetherpets/src/theme/config_colors.dart';
 import 'package:newtetherpets/src/theme/text.dart';
 
-class DashBoardScreen extends ConsumerStatefulWidget {
+class DashBoardScreen extends StatefulWidget {
   const DashBoardScreen({super.key});
-  static MaterialPageRoute route() {
-    return MaterialPageRoute(
+  static Route<DashBoardScreen> route() {
+    return MaterialPageRoute<DashBoardScreen>(
       builder: (BuildContext context) => const DashBoardScreen(),
     );
   }
 
   @override
-  ConsumerState<ConsumerStatefulWidget> createState() =>
-      _DashBoardScreenState();
+  State<StatefulWidget> createState() => _DashBoardScreenState();
 }
 
-class _DashBoardScreenState extends ConsumerState<DashBoardScreen> {
+class _DashBoardScreenState extends State<DashBoardScreen> {
   int currentPageIndex = 0;
   @override
   Widget build(BuildContext context) {
@@ -38,6 +36,7 @@ class _DashBoardScreenState extends ConsumerState<DashBoardScreen> {
         elevation: 3,
         height: 66,
         backgroundColor: ConfigColors.white,
+        indicatorColor: Colors.transparent,
         onDestinationSelected: (int index) {
           setState(() {
             currentPageIndex = index;
@@ -50,12 +49,20 @@ class _DashBoardScreenState extends ConsumerState<DashBoardScreen> {
               color: ConfigColors.secondary,
               height: 25,
             ),
+            selectedIcon: Assets.home.svg(
+              color: ConfigColors.primary,
+              height: 25,
+            ),
             label: 'Home',
           ),
           const NavigationDestination(
             icon: Icon(
               CupertinoIcons.paw_solid,
               color: ConfigColors.secondary,
+            ),
+            selectedIcon: Icon(
+              CupertinoIcons.paw_solid,
+              color: ConfigColors.primary,
             ),
             label: 'Pets',
           ),
@@ -70,11 +77,19 @@ class _DashBoardScreenState extends ConsumerState<DashBoardScreen> {
               color: ConfigColors.secondary,
               height: 25,
             ),
+            selectedIcon: Assets.checkup.svg(
+              color: ConfigColors.primary,
+              height: 25,
+            ),
             label: 'checkup',
           ),
           NavigationDestination(
             icon: Assets.appointment.svg(
               color: ConfigColors.secondary,
+              height: 25,
+            ),
+            selectedIcon: Assets.appointment.svg(
+              color: ConfigColors.primary,
               height: 25,
             ),
             label: 'Appointments',
@@ -224,7 +239,7 @@ class HomeView extends StatelessWidget {
           ),
           ProviderTile(
             providerImage: Assets.doctor2.path,
-            providerName: 'Dr.  Roberto Williams',
+            providerName: 'Dr. Roberto Williams',
             providerStatus: 'Veterinarian',
             rating: 4.0,
             noOfReviews: 45,

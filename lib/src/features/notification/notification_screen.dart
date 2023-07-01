@@ -21,6 +21,15 @@ class NotificationScreen extends StatelessWidget {
           'Notification',
           color: ConfigColors.white,
         ),
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(
+              Icons.settings_outlined,
+              color: ConfigColors.white,
+            ),
+          )
+        ],
       ),
       body: ListView(
         children: const [

@@ -16,6 +16,7 @@ class Assets {
 
   static const AssetGenImage tetherLogo =
       AssetGenImage('assets/Tether-logo.png');
+  static const SvgGenImage address = SvgGenImage('assets/address.svg');
   static const SvgGenImage appointment = SvgGenImage('assets/appointment.svg');
   static const SvgGenImage checkup = SvgGenImage('assets/checkup.svg');
   static const SvgGenImage chipAndTag = SvgGenImage('assets/chipAndTag.svg');
@@ -39,6 +40,9 @@ class Assets {
       SvgGenImage('assets/medicalRecords.svg');
   static const SvgGenImage message = SvgGenImage('assets/message.svg');
   static const SvgGenImage name = SvgGenImage('assets/name.svg');
+  static const SvgGenImage nameIcon = SvgGenImage('assets/nameIcon.svg');
+  static const SvgGenImage nickNameIcon =
+      SvgGenImage('assets/nickNameIcon.svg');
   static const SvgGenImage notofication =
       SvgGenImage('assets/notofication.svg');
   static const AssetGenImage persianCat1 =
@@ -55,11 +59,14 @@ class Assets {
   static const AssetGenImage profilePhoto =
       AssetGenImage('assets/profile_photo.jpeg');
   static const SvgGenImage provider = SvgGenImage('assets/provider.svg');
+  static const SvgGenImage speciesIcon = SvgGenImage('assets/speciesIcon.svg');
   static const SvgGenImage twitter = SvgGenImage('assets/twitter.svg');
+  static const SvgGenImage weightIcon = SvgGenImage('assets/weightIcon.svg');
 
   /// List of all assets
   List<dynamic> get values => [
         tetherLogo,
+        address,
         appointment,
         checkup,
         chipAndTag,
@@ -82,6 +89,8 @@ class Assets {
         medicalRecords,
         message,
         name,
+        nameIcon,
+        nickNameIcon,
         notofication,
         persianCat1,
         persianCat2,
@@ -92,7 +101,9 @@ class Assets {
         primaryLogo,
         profilePhoto,
         provider,
-        twitter
+        speciesIcon,
+        twitter,
+        weightIcon
       ];
 }
 
