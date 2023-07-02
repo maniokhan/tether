@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
 import 'package:tether_pet_owner/src/constants/app_sizes.dart';
 import 'package:tether_pet_owner/src/features/settings/notification_settings_screen.dart';
 import 'package:tether_pet_owner/src/theme/config_colors.dart';
 import 'package:tether_pet_owner/src/theme/text.dart';
+=======
+import 'package:newtetherpets/src/constants/app_sizes.dart';
+import 'package:newtetherpets/src/theme/config_colors.dart';
+import 'package:newtetherpets/src/theme/text.dart';
+>>>>>>> 50ec7c09c7b606e2e79a09599775aba7f0b8827f
 
 class NotificationScreen extends StatelessWidget {
   const NotificationScreen({super.key});

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:tether_pet_owner/src/theme/config_colors.dart';
-import 'package:tether_pet_owner/src/theme/text.dart';
+import 'package:newtetherpets/src/theme/config_colors.dart';
+import 'package:newtetherpets/src/theme/config_colors.dart';
+import 'package:newtetherpets/src/theme/text.dart';
 
 class HelpCenterScreen extends StatefulWidget {
   const HelpCenterScreen({super.key});

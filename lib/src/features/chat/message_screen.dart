@@ -1,12 +1,17 @@
 import 'package:chat_bubbles/chat_bubbles.dart';
 import 'package:custom_clippers/custom_clippers.dart';
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
 import 'package:tether_pet_owner/src/assets/assets.gen.dart';
 import 'package:tether_pet_owner/src/assets/fonts.gen.dart';
 import 'package:tether_pet_owner/src/common_widgets/common_text_field.dart';
 import 'package:tether_pet_owner/src/constants/app_sizes.dart';
 import 'package:tether_pet_owner/src/theme/config_colors.dart';
 import 'package:tether_pet_owner/src/theme/text.dart';
+=======
+import 'package:newtetherpets/src/assets/assets.gen.dart';
+import 'package:newtetherpets/src/theme/text.dart';
+>>>>>>> 50ec7c09c7b606e2e79a09599775aba7f0b8827f
 
 class MessageScreen extends StatelessWidget {
   MessageScreen({super.key});

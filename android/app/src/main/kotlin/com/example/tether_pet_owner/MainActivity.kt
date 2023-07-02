@@ -1,4 +1,4 @@
-package com.example.tether_pet_owner
+package com.tetherpets.newtetherpets
 
 import io.flutter.embedding.android.FlutterActivity
 

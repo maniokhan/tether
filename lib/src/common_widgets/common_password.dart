@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:tether_pet_owner/src/common_widgets/check_password.dart';
-import 'package:tether_pet_owner/src/common_widgets/common_error_card.dart';
-import 'package:tether_pet_owner/src/common_widgets/common_text_field.dart';
-import 'package:tether_pet_owner/src/utilities/extensions.dart';
-import 'package:tether_pet_owner/src/utilities/requirement.dart';
+import 'package:newtetherpets/src/common_widgets/check_password.dart';
+import 'package:newtetherpets/src/common_widgets/common_error_card.dart';
+import 'package:newtetherpets/src/common_widgets/common_text_field.dart';
+import 'package:newtetherpets/src/utilities/extensions.dart';
+import 'package:newtetherpets/src/utilities/requirement.dart';
 
 class CommonPasswordInput extends StatefulWidget {
   const CommonPasswordInput({

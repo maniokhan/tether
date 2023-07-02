@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:tether_pet_owner/src/assets/assets.gen.dart';
-import 'package:tether_pet_owner/src/common_widgets/common_button.dart';
-import 'package:tether_pet_owner/src/common_widgets/common_card.dart';
-import 'package:tether_pet_owner/src/common_widgets/common_password.dart';
-import 'package:tether_pet_owner/src/common_widgets/common_text_field.dart';
-import 'package:tether_pet_owner/src/common_widgets/common_text_field_title.dart';
-import 'package:tether_pet_owner/src/constants/app_sizes.dart';
-import 'package:tether_pet_owner/src/features/authentication/signup_screen.dart';
-import 'package:tether_pet_owner/src/features/pet_owner/dashboard/dashboard_screen.dart';
-import 'package:tether_pet_owner/src/theme/config_colors.dart';
-import 'package:tether_pet_owner/src/theme/text.dart';
+import 'package:newtetherpets/src/assets/assets.gen.dart';
+import 'package:newtetherpets/src/common_widgets/common_button.dart';
+import 'package:newtetherpets/src/common_widgets/common_card.dart';
+import 'package:newtetherpets/src/common_widgets/common_password.dart';
+import 'package:newtetherpets/src/common_widgets/common_text_field.dart';
+import 'package:newtetherpets/src/common_widgets/common_text_field_title.dart';
+import 'package:newtetherpets/src/constants/app_sizes.dart';
+import 'package:newtetherpets/src/features/authentication/signup_screen.dart';
+import 'package:newtetherpets/src/features/pet_owner/dashboard/dashboard_screen.dart';
+import 'package:newtetherpets/src/theme/config_colors.dart';
+import 'package:newtetherpets/src/theme/text.dart';
 
 class SigninScreen extends StatefulWidget {
   const SigninScreen({super.key});
@@ -20,15 +20,21 @@ class SigninScreen extends StatefulWidget {
 }
 
 class _SigninScreenState extends State<SigninScreen> {
+<<<<<<< HEAD
   late final TextEditingController _emailController;
   late final TextEditingController _passwordController;
+=======
+  // late final TextEditingController _emailController;
 
-  @override
-  void initState() {
-    _emailController = TextEditingController();
-    _passwordController = TextEditingController();
-    super.initState();
-  }
+  // late final TextEditingController _passwordController;
+>>>>>>> 50ec7c09c7b606e2e79a09599775aba7f0b8827f
+
+  // @override
+  // void initState() {
+  //   _emailController = TextEditingController();
+  //   _passwordController = TextEditingController();
+  //   super.initState();
+  // }
 
   @override
   Widget build(BuildContext context) {

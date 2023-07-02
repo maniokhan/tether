@@ -1,13 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:tether_pet_owner/src/assets/assets.gen.dart';
-import 'package:tether_pet_owner/src/constants/app_sizes.dart';
-import 'package:tether_pet_owner/src/features/settings/help_center_screen.dart';
-import 'package:tether_pet_owner/src/features/settings/notification_settings_screen.dart';
-import 'package:tether_pet_owner/src/features/settings/privacy_policy_screen.dart';
-import 'package:tether_pet_owner/src/features/settings/terms_of_use_screen.dart';
-import 'package:tether_pet_owner/src/theme/config_colors.dart';
-import 'package:tether_pet_owner/src/theme/text.dart';
+import 'package:newtetherpets/src/assets/assets.gen.dart';
+import 'package:newtetherpets/src/constants/app_sizes.dart';
+import 'package:newtetherpets/src/features/settings/help_center_screen.dart';
+import 'package:newtetherpets/src/features/settings/notification_settings_screen.dart';
+import 'package:newtetherpets/src/features/settings/privacy_policy_screen.dart';
+import 'package:newtetherpets/src/features/settings/terms_of_use_screen.dart';
+import 'package:newtetherpets/src/theme/config_colors.dart';
+import 'package:newtetherpets/src/theme/text.dart';
 
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({super.key});

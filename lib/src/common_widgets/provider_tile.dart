@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:tether_pet_owner/src/common_widgets/common_card.dart';
-import 'package:tether_pet_owner/src/constants/app_sizes.dart';
-import 'package:tether_pet_owner/src/theme/config_colors.dart';
-import 'package:tether_pet_owner/src/theme/text.dart';
+import 'package:newtetherpets/src/common_widgets/common_card.dart';
+import 'package:newtetherpets/src/constants/app_sizes.dart';
+import 'package:newtetherpets/src/theme/config_colors.dart';
+import 'package:newtetherpets/src/theme/text.dart';
 
 class ProviderTile extends StatelessWidget {
   const ProviderTile({
@@ -78,7 +78,7 @@ class ProviderTile extends StatelessWidget {
                       minRating: 1,
                       allowHalfRating: true,
                       itemSize: 12,
-                      itemPadding: const EdgeInsets.symmetric(horizontal: 4.0),
+                      itemPadding: const EdgeInsets.symmetric(horizontal: 2.0),
                       itemBuilder: (BuildContext context, int index) =>
                           const Icon(
                         Icons.star,

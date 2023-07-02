@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:tether_pet_owner/src/assets/assets.gen.dart';
-import 'package:tether_pet_owner/src/common_widgets/common_card.dart';
-import 'package:tether_pet_owner/src/common_widgets/common_text_field.dart';
-import 'package:tether_pet_owner/src/constants/app_sizes.dart';
-import 'package:tether_pet_owner/src/features/chat/chat_screen.dart';
-import 'package:tether_pet_owner/src/features/notification/notification_screen.dart';
-import 'package:tether_pet_owner/src/features/provider/dashboard/drawer_screen.dart';
-import 'package:tether_pet_owner/src/theme/config_colors.dart';
-import 'package:tether_pet_owner/src/theme/text.dart';
+import 'package:newtetherpets/src/assets/assets.gen.dart';
+import 'package:newtetherpets/src/common_widgets/common_card.dart';
+import 'package:newtetherpets/src/common_widgets/common_text_field.dart';
+import 'package:newtetherpets/src/constants/app_sizes.dart';
+import 'package:newtetherpets/src/features/chat/chat_screen.dart';
+import 'package:newtetherpets/src/features/notification/notification_screen.dart';
+import 'package:newtetherpets/src/features/provider/dashboard/drawer_screen.dart';
+import 'package:newtetherpets/src/theme/config_colors.dart';
+import 'package:newtetherpets/src/theme/text.dart';
 
 class PatientScreen extends StatefulWidget {
   const PatientScreen({super.key});

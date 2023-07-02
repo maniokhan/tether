@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tether_pet_owner/src/theme/config_colors.dart';
+import 'package:newtetherpets/src/theme/config_colors.dart';
 
 class SynappCircularProgressIndicator extends StatelessWidget {
   const SynappCircularProgressIndicator({super.key});

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
 import 'package:tether_pet_owner/src/assets/assets.gen.dart';
 import 'package:tether_pet_owner/src/common_widgets/common_button.dart';
 import 'package:tether_pet_owner/src/common_widgets/common_card.dart';
@@ -7,6 +8,13 @@ import 'package:tether_pet_owner/src/features/pet_owner/dashboard/dashboard_scre
 import 'package:tether_pet_owner/src/features/provider/dashboard/provider_dashboard_screen.dart';
 import 'package:tether_pet_owner/src/theme/config_colors.dart';
 import 'package:tether_pet_owner/src/theme/text.dart';
+=======
+import 'package:newtetherpets/src/assets/assets.gen.dart';
+import 'package:newtetherpets/src/common_widgets/common_card.dart';
+import 'package:newtetherpets/src/constants/app_sizes.dart';
+import 'package:newtetherpets/src/theme/config_colors.dart';
+import 'package:newtetherpets/src/theme/text.dart';
+>>>>>>> 50ec7c09c7b606e2e79a09599775aba7f0b8827f
 
 enum Role { petOwner, provider }
 

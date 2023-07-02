@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:tether_pet_owner/src/assets/fonts.gen.dart';
-import 'package:tether_pet_owner/src/theme/config_colors.dart';
-import 'package:tether_pet_owner/src/utilities/requirement.dart';
+import 'package:newtetherpets/src/assets/fonts.gen.dart';
+import 'package:newtetherpets/src/theme/config_colors.dart';
+import 'package:newtetherpets/src/utilities/requirement.dart';
 
 class CheckPasswordWidget extends StatelessWidget {
   const CheckPasswordWidget({

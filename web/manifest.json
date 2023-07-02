@@ -1,6 +1,6 @@
 {
-    "name": "tether_pet_owner",
-    "short_name": "tether_pet_owner",
+    "name": "newtetherpets",
+    "short_name": "newtetherpets",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

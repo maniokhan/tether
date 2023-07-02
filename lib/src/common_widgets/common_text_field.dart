@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:tether_pet_owner/src/assets/assets.gen.dart';
-import 'package:tether_pet_owner/src/assets/fonts.gen.dart';
-import 'package:tether_pet_owner/src/theme/config_colors.dart';
+import 'package:newtetherpets/src/assets/assets.gen.dart';
+import 'package:newtetherpets/src/assets/fonts.gen.dart';
+import 'package:newtetherpets/src/theme/config_colors.dart';
 
 enum CommonFieldState {
   idle(

@@ -1,23 +1,23 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:tether_pet_owner/src/assets/assets.gen.dart';
-import 'package:tether_pet_owner/src/common_widgets/common_appointment_tile.dart';
-import 'package:tether_pet_owner/src/common_widgets/common_tile.dart';
-import 'package:tether_pet_owner/src/common_widgets/provider_tile.dart';
-import 'package:tether_pet_owner/src/constants/app_sizes.dart';
-import 'package:tether_pet_owner/src/features/chat/chat_screen.dart';
-import 'package:tether_pet_owner/src/features/notification/notification_screen.dart';
-import 'package:tether_pet_owner/src/features/pet_owner/appointments/appointment_screen.dart';
-import 'package:tether_pet_owner/src/features/pet_owner/dashboard/drawer_screen.dart';
-import 'package:tether_pet_owner/src/features/pet_owner/pets/pet_screen.dart';
-import 'package:tether_pet_owner/src/features/pet_owner/providers_screen.dart';
-import 'package:tether_pet_owner/src/theme/config_colors.dart';
-import 'package:tether_pet_owner/src/theme/text.dart';
+import 'package:newtetherpets/src/assets/assets.gen.dart';
+import 'package:newtetherpets/src/common_widgets/common_appointment_tile.dart';
+import 'package:newtetherpets/src/common_widgets/common_tile.dart';
+import 'package:newtetherpets/src/common_widgets/provider_tile.dart';
+import 'package:newtetherpets/src/constants/app_sizes.dart';
+import 'package:newtetherpets/src/features/chat/chat_screen.dart';
+import 'package:newtetherpets/src/features/notification/notification_screen.dart';
+import 'package:newtetherpets/src/features/pet_owner/appointments/appointment_screen.dart';
+import 'package:newtetherpets/src/features/pet_owner/dashboard/drawer_screen.dart';
+import 'package:newtetherpets/src/features/pet_owner/pets/pet_screen.dart';
+import 'package:newtetherpets/src/features/pet_owner/providers_screen.dart';
+import 'package:newtetherpets/src/theme/config_colors.dart';
+import 'package:newtetherpets/src/theme/text.dart';
 
 class DashBoardScreen extends StatefulWidget {
   const DashBoardScreen({super.key});
-  static MaterialPageRoute route() {
-    return MaterialPageRoute(
+  static Route<DashBoardScreen> route() {
+    return MaterialPageRoute<DashBoardScreen>(
       builder: (BuildContext context) => const DashBoardScreen(),
     );
   }
@@ -36,6 +36,7 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
         elevation: 3,
         height: 66,
         backgroundColor: ConfigColors.white,
+        indicatorColor: Colors.transparent,
         onDestinationSelected: (int index) {
           setState(() {
             currentPageIndex = index;
@@ -48,12 +49,20 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
               color: ConfigColors.secondary,
               height: 25,
             ),
+            selectedIcon: Assets.home.svg(
+              color: ConfigColors.primary,
+              height: 25,
+            ),
             label: 'Home',
           ),
           const NavigationDestination(
             icon: Icon(
               CupertinoIcons.paw_solid,
               color: ConfigColors.secondary,
+            ),
+            selectedIcon: Icon(
+              CupertinoIcons.paw_solid,
+              color: ConfigColors.primary,
             ),
             label: 'Pets',
           ),
@@ -62,11 +71,19 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
               color: ConfigColors.secondary,
               height: 25,
             ),
+            selectedIcon: Assets.checkup.svg(
+              color: ConfigColors.primary,
+              height: 25,
+            ),
             label: 'checkup',
           ),
           NavigationDestination(
             icon: Assets.appointment.svg(
               color: ConfigColors.secondary,
+              height: 25,
+            ),
+            selectedIcon: Assets.appointment.svg(
+              color: ConfigColors.primary,
               height: 25,
             ),
             label: 'Appointments',
