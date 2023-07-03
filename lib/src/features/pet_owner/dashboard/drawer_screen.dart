@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:newtetherpets/src/assets/assets.gen.dart';
 import 'package:newtetherpets/src/features/medical_records/medical_records_screen.dart';
-import 'package:newtetherpets/src/features/profile/profile_screen.dart';
+import 'package:newtetherpets/src/features/pet_owner/profile/profile_screen.dart';
 import 'package:newtetherpets/src/features/settings/settings_screen.dart';
 import 'package:newtetherpets/src/theme/config_colors.dart';
 import 'package:newtetherpets/src/theme/text.dart';

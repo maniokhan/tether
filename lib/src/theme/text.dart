@@ -220,6 +220,8 @@ class AppText extends StatelessWidget {
     this.maxLines,
     this.fontWeight,
     this.textAlign,
+    this.softWrap,
+    this.overflow,
   }) : level = AppTextLevel.paragraphS10;
 
   const AppText.paragraphS14(
@@ -230,6 +232,8 @@ class AppText extends StatelessWidget {
     this.maxLines,
     this.fontWeight,
     this.textAlign,
+    this.softWrap,
+    this.overflow,
   }) : level = AppTextLevel.paragraphS14;
 
   const AppText.paragraphS16(
@@ -240,6 +244,8 @@ class AppText extends StatelessWidget {
     this.maxLines,
     this.fontWeight,
     this.textAlign,
+    this.softWrap,
+    this.overflow,
   }) : level = AppTextLevel.paragraphS16;
 
   const AppText.titleS20(
@@ -250,6 +256,8 @@ class AppText extends StatelessWidget {
     this.maxLines,
     this.fontWeight,
     this.textAlign,
+    this.softWrap,
+    this.overflow,
   }) : level = AppTextLevel.titleS20;
   const AppText.titleS24(
     this.data, {
@@ -259,6 +267,8 @@ class AppText extends StatelessWidget {
     this.maxLines,
     this.fontWeight,
     this.textAlign,
+    this.softWrap,
+    this.overflow,
   }) : level = AppTextLevel.titleS24;
 
   const AppText.titleS32(
@@ -269,6 +279,8 @@ class AppText extends StatelessWidget {
     this.maxLines,
     this.fontWeight,
     this.textAlign,
+    this.softWrap,
+    this.overflow,
   }) : level = AppTextLevel.titleS32;
 
   const AppText.paragraphI9(
@@ -279,6 +291,8 @@ class AppText extends StatelessWidget {
     this.maxLines,
     this.fontWeight,
     this.textAlign,
+    this.softWrap,
+    this.overflow,
   }) : level = AppTextLevel.paragraphI9;
 
   const AppText.paragraphI10(
@@ -289,6 +303,8 @@ class AppText extends StatelessWidget {
     this.maxLines,
     this.textAlign,
     this.fontWeight,
+    this.softWrap,
+    this.overflow,
   }) : level = AppTextLevel.paragraphI10;
 
   const AppText.paragraphI12(
@@ -299,6 +315,8 @@ class AppText extends StatelessWidget {
     this.maxLines,
     this.fontWeight,
     this.textAlign,
+    this.softWrap,
+    this.overflow,
   }) : level = AppTextLevel.paragraphI12;
   const AppText.paragraphI14(
     this.data, {
@@ -308,6 +326,8 @@ class AppText extends StatelessWidget {
     this.maxLines,
     this.fontWeight,
     this.textAlign,
+    this.softWrap,
+    this.overflow,
   }) : level = AppTextLevel.paragraphI14;
   const AppText.paragraphI16(
     this.data, {
@@ -317,6 +337,8 @@ class AppText extends StatelessWidget {
     this.maxLines,
     this.fontWeight,
     this.textAlign,
+    this.softWrap,
+    this.overflow,
   }) : level = AppTextLevel.paragraphI16;
   const AppText.titleI32(
     this.data, {
@@ -326,6 +348,8 @@ class AppText extends StatelessWidget {
     this.maxLines,
     this.fontWeight,
     this.textAlign,
+    this.softWrap,
+    this.overflow,
   }) : level = AppTextLevel.titleI32;
 
   final String data;
@@ -335,6 +359,8 @@ class AppText extends StatelessWidget {
   final int? maxLines;
   final FontWeight? fontWeight;
   final TextAlign? textAlign;
+  final bool? softWrap;
+  final TextOverflow? overflow;
 
   @override
   Widget build(BuildContext context) {
@@ -379,6 +405,8 @@ class AppText extends StatelessWidget {
         fontWeight: fontWeight,
       ),
       maxLines: maxLines,
+      softWrap: softWrap,
+      overflow: overflow,
     );
   }
 }

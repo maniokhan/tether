@@ -5,6 +5,7 @@ import 'package:newtetherpets/src/constants/app_sizes.dart';
 import 'package:newtetherpets/src/features/chat/chat_screen.dart';
 import 'package:newtetherpets/src/features/notification/notification_screen.dart';
 import 'package:newtetherpets/src/features/pet_owner/dashboard/drawer_screen.dart';
+import 'package:newtetherpets/src/features/pet_owner/pets/detail_pet_screen.dart';
 import 'package:newtetherpets/src/theme/config_colors.dart';
 import 'package:newtetherpets/src/theme/text.dart';
 
@@ -122,76 +123,82 @@ class PetScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              child: Column(
-                children: [
-                  ClipRRect(
-                    borderRadius: const BorderRadius.only(
-                      topLeft: Radius.circular(16),
-                      topRight: Radius.circular(16),
+              child: InkWell(
+                onTap: () {
+                  // DetailPetScreen
+                  Navigator.push(context, DetailPetScreen.route());
+                },
+                child: Column(
+                  children: [
+                    ClipRRect(
+                      borderRadius: const BorderRadius.only(
+                        topLeft: Radius.circular(16),
+                        topRight: Radius.circular(16),
+                      ),
+                      child: Image.asset(
+                        Assets.dog1.path,
+                        fit: BoxFit.cover,
+                        height: 190,
+                        width: double.infinity,
+                      ),
                     ),
-                    child: Image.asset(
-                      Assets.dog1.path,
-                      fit: BoxFit.cover,
-                      height: 190,
-                      width: double.infinity,
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(16, 16, 16, 16),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const AppText.paragraphS16(
+                            'Diana',
+                            fontWeight: FontWeight.w500,
+                            fontSize: 18,
+                          ),
+                          const SizedBox(height: 16),
+                          Row(
+                            children: [
+                              Assets.prefix.svg(
+                                height: 20,
+                              ),
+                              gapW12,
+                              const AppText.paragraphI14(
+                                'Male',
+                                fontWeight: FontWeight.w500,
+                              ),
+                              const Spacer(),
+                              Assets.appointment.svg(
+                                color: ConfigColors.primary,
+                                height: 25,
+                              ),
+                              gapW12,
+                              const AppText.paragraphI14(
+                                '4 years old',
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ],
+                          ),
+                          gapH20,
+                          Row(
+                            children: [
+                              Assets.dogIcon.svg(
+                                height: 20,
+                              ),
+                              const SizedBox(width: 12),
+                              const AppText.paragraphI14(
+                                'Golden Retriever',
+                                fontWeight: FontWeight.w500,
+                              ),
+                              const Spacer(),
+                              const AppText.paragraphI14(
+                                '12 lbs',
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ],
+                          ),
+                          gapH16,
+                        ],
+                      ),
                     ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(16, 16, 16, 16),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const AppText.paragraphS16(
-                          'Diana',
-                          fontWeight: FontWeight.w500,
-                          fontSize: 18,
-                        ),
-                        const SizedBox(height: 16),
-                        Row(
-                          children: [
-                            Assets.prefix.svg(
-                              height: 20,
-                            ),
-                            gapW12,
-                            const AppText.paragraphI14(
-                              'Male',
-                              fontWeight: FontWeight.w500,
-                            ),
-                            const Spacer(),
-                            Assets.appointment.svg(
-                              color: ConfigColors.primary,
-                              height: 25,
-                            ),
-                            gapW12,
-                            const AppText.paragraphI14(
-                              '4 years old',
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ],
-                        ),
-                        gapH20,
-                        Row(
-                          children: [
-                            Assets.dogIcon.svg(
-                              height: 20,
-                            ),
-                            const SizedBox(width: 12),
-                            const AppText.paragraphI14(
-                              'Golden Retriever',
-                              fontWeight: FontWeight.w500,
-                            ),
-                            const Spacer(),
-                            const AppText.paragraphI14(
-                              '12 lbs',
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ],
-                        ),
-                        gapH16,
-                      ],
-                    ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ),

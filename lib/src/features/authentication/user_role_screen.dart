@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:newtetherpets/src/assets/assets.gen.dart';
+import 'package:newtetherpets/src/common_widgets/common_button.dart';
 import 'package:newtetherpets/src/common_widgets/common_card.dart';
 import 'package:newtetherpets/src/constants/app_sizes.dart';
+import 'package:newtetherpets/src/features/pet_owner/dashboard/dashboard_screen.dart';
+import 'package:newtetherpets/src/features/provider/dashboard/provider_dashboard_screen.dart';
 import 'package:newtetherpets/src/theme/config_colors.dart';
 import 'package:newtetherpets/src/theme/text.dart';
 
@@ -37,7 +40,7 @@ class _UserRoleScreenState extends State<UserRoleScreen> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            height: MediaQuery.of(context).size.height * 0.2,
+            height: MediaQuery.of(context).size.height * 0.17,
             decoration: BoxDecoration(
               image: DecorationImage(
                 image: AssetImage(
@@ -47,7 +50,7 @@ class _UserRoleScreenState extends State<UserRoleScreen> {
               ),
             ),
           ),
-          gapH16,
+          gapH12,
           const Center(
             child: Column(
               children: [
@@ -137,6 +140,22 @@ class _UserRoleScreenState extends State<UserRoleScreen> {
               ),
             ),
           ),
+          const Spacer(),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: CommonButton(
+              text: 'Continue',
+              onPress: () {
+                if (selcectedRole == Role.petOwner) {
+                  Navigator.push(context, DashBoardScreen.route());
+                }
+                if (selcectedRole == Role.provider) {
+                  Navigator.push(context, ProviderDashBoardScreen.route());
+                }
+              },
+            ),
+          ),
+          gapH20,
         ],
       ),
     );

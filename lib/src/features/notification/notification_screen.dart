@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:newtetherpets/src/constants/app_sizes.dart';
+import 'package:newtetherpets/src/features/settings/notification_settings_screen.dart';
 import 'package:newtetherpets/src/theme/config_colors.dart';
 import 'package:newtetherpets/src/theme/text.dart';
 
@@ -23,7 +24,9 @@ class NotificationScreen extends StatelessWidget {
         ),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(context, NotificationSettingsScreen.route());
+            },
             icon: const Icon(
               Icons.settings_outlined,
               color: ConfigColors.white,

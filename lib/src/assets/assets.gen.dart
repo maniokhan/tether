@@ -65,6 +65,7 @@ class Assets {
   static const AssetGenImage profilePhoto =
       AssetGenImage('assets/profile_photo.jpeg');
   static const SvgGenImage provider = SvgGenImage('assets/provider.svg');
+  static const SvgGenImage seenIcon = SvgGenImage('assets/seenIcon.svg');
   static const SvgGenImage servicesIcon =
       SvgGenImage('assets/servicesIcon.svg');
   static const SvgGenImage speciesIcon = SvgGenImage('assets/speciesIcon.svg');
@@ -113,6 +114,7 @@ class Assets {
         primaryLogo,
         profilePhoto,
         provider,
+        seenIcon,
         servicesIcon,
         speciesIcon,
         twitter,

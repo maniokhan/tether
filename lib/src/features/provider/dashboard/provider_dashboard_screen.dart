@@ -12,19 +12,19 @@ import 'package:newtetherpets/src/features/provider/patients/patients_screen.dar
 import 'package:newtetherpets/src/theme/config_colors.dart';
 import 'package:newtetherpets/src/theme/text.dart';
 
-class DashBoardScreen extends StatefulWidget {
-  const DashBoardScreen({super.key});
+class ProviderDashBoardScreen extends StatefulWidget {
+  const ProviderDashBoardScreen({super.key});
   static MaterialPageRoute route() {
     return MaterialPageRoute(
-      builder: (BuildContext context) => const DashBoardScreen(),
+      builder: (BuildContext context) => const ProviderDashBoardScreen(),
     );
   }
 
   @override
-  State<StatefulWidget> createState() => _DashBoardScreenState();
+  State<StatefulWidget> createState() => _ProviderDashBoardScreenState();
 }
 
-class _DashBoardScreenState extends State<DashBoardScreen> {
+class _ProviderDashBoardScreenState extends State<ProviderDashBoardScreen> {
   int currentPageIndex = 0;
   @override
   Widget build(BuildContext context) {
@@ -34,6 +34,7 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
         elevation: 3,
         height: 66,
         backgroundColor: ConfigColors.white,
+        indicatorColor: Colors.transparent,
         onDestinationSelected: (int index) {
           setState(() {
             currentPageIndex = index;
@@ -46,6 +47,10 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
               color: ConfigColors.secondary,
               height: 25,
             ),
+            selectedIcon: Assets.home.svg(
+              color: ConfigColors.primary,
+              height: 25,
+            ),
             label: 'Home',
           ),
           NavigationDestination(
@@ -53,11 +58,19 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
               color: ConfigColors.secondary,
               height: 25,
             ),
+            selectedIcon: Assets.patientsIcon.svg(
+              color: ConfigColors.primary,
+              height: 25,
+            ),
             label: 'patients',
           ),
           NavigationDestination(
             icon: Assets.appointment.svg(
               color: ConfigColors.secondary,
+              height: 25,
+            ),
+            selectedIcon: Assets.appointment.svg(
+              color: ConfigColors.primary,
               height: 25,
             ),
             label: 'Appointments',
