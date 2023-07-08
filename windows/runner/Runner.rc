@@ -89,13 +89,13 @@ BEGIN
     BEGIN
         BLOCK "040904e4"
         BEGIN
-            VALUE "CompanyName", "com.example" "\0"
-            VALUE "FileDescription", "tether_pet_owner" "\0"
+            VALUE "CompanyName", "com.tetherpets" "\0"
+            VALUE "FileDescription", "newtetherpets" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "tether_pet_owner" "\0"
-            VALUE "LegalCopyright", "Copyright (C) 2023 com.example. All rights reserved." "\0"
-            VALUE "OriginalFilename", "tether_pet_owner.exe" "\0"
-            VALUE "ProductName", "tether_pet_owner" "\0"
+            VALUE "InternalName", "newtetherpets" "\0"
+            VALUE "LegalCopyright", "Copyright (C) 2023 com.tetherpets. All rights reserved." "\0"
+            VALUE "OriginalFilename", "newtetherpets.exe" "\0"
+            VALUE "ProductName", "newtetherpets" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END
